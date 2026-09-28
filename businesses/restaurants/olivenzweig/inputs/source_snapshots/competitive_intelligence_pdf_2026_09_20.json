@@ -1,0 +1,25 @@
+{
+  "restaurant": "Olivenzweig Restaurant",
+  "document": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+  "document_sha256": "0bb673506e50bf94a8b48b6f1bbbb7707d5c550e0480fc0723f04f48cbae4bca",
+  "snapshot_date": "2026-09-20",
+  "ingested_at": "2026-09-23",
+  "page_references": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "captured_counts": {
+    "main_menu_entries": 102,
+    "weekend_brunch_entries": 26,
+    "total_entries": 128
+  },
+  "profile_cross_check": {
+    "weekend_brunch": "Saturday and Sunday, 12:00-16:00",
+    "positioning": "Levantine sit-down; mezze, grill, smoked meat, broad non-alcoholic drinks"
+  },
+  "authority_note": "Supporting synthesized research; current official sources retain priority."
+}

@@ -1,0 +1,16 @@
+{
+  "restaurant": "beit_fayrouz",
+  "google_maps_url": "https://www.google.com/maps/place/Beit+Fayrouz+Restaurant/@50.6851301,7.1533365,17z/data=!4m8!3m7!1s0x47bee51e12748a15:0xb6bfc21bcfbce636!8m2!3d50.6851301!4d7.1533365!9m1!1b1!16s%2Fg%2F11nc0xvtdy",
+  "collection_started_at": "2026-09-21T21:09:24.878204+00:00",
+  "collection_completed_at": "2026-09-21T21:09:40.708279+00:00",
+  "reviews_collected": 82,
+  "latest_review_date": "2026-09-16",
+  "earliest_review_date": "2026-04-11",
+  "actor_run": {
+    "actor_id": "compass/google-maps-reviews-scraper",
+    "run_id": "E1vz1dqpmabp7HPiU",
+    "dataset_id": "4f0NHQzS1jau7WjeM",
+    "status": "SUCCEEDED"
+  },
+  "full_history_attempted": true
+}

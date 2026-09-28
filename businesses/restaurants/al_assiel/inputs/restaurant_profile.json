@@ -1,0 +1,822 @@
+{
+  "restaurant_name": "Al Assiel Restaurant & Shisha",
+  "business_type": "restaurant",
+  "concept": "Arab restaurant",
+  "service_modes": [
+    "cafeteria",
+    "buffet"
+  ],
+  "meals": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "opening_hours": {
+    "monday": {
+      "open": "12:00",
+      "close": "00:00"
+    },
+    "tuesday": {
+      "open": "12:00",
+      "close": "00:00"
+    },
+    "wednesday": {
+      "open": "12:00",
+      "close": "00:00"
+    },
+    "thursday": {
+      "open": "12:00",
+      "close": "00:00"
+    },
+    "friday": {
+      "open": "12:00",
+      "close": "00:00"
+    },
+    "saturday": {
+      "open": "12:00",
+      "close": "00:00"
+    },
+    "sunday": {
+      "open": "12:00",
+      "close": "00:00"
+    }
+  },
+  "features": {
+    "shisha": true,
+    "indoor_seating": true,
+    "outdoor_seating": true,
+    "reservations": true,
+    "takeaway": true,
+    "delivery": null,
+    "card_payment": true,
+    "parking_available": true,
+    "breakfast": true,
+    "catering": true,
+    "events": true,
+    "bar_drinks": true
+  },
+  "buffet": {
+    "available": true,
+    "days": [
+      "saturday",
+      "sunday"
+    ],
+    "start_time": "15:00",
+    "end_time_exact": null,
+    "end_time_approximate_range": [
+      "20:00",
+      "21:00"
+    ],
+    "price_eur": null,
+    "all_you_can_eat": null
+  },
+  "historical_changes": {
+    "known_major_changes": false,
+    "ownership_change": false,
+    "management_change": false,
+    "chef_change": false,
+    "major_menu_change": false,
+    "major_price_change": false,
+    "renovation": false,
+    "temporary_closure": false,
+    "notes": "No known major operational changes were reported."
+  },
+  "important_dates": [],
+  "staff_names": [],
+  "analysis_settings": {
+    "use_all_reviews_as_primary_denominator": true,
+    "also_report_written_review_coverage": true,
+    "calculate_positive_coverage": true,
+    "calculate_negative_coverage": true,
+    "calculate_neutral_coverage": true,
+    "calculate_total_mentions": true,
+    "calculate_reviews_mentioning": true,
+    "calculate_average_rating_when_mentioned": true,
+    "calculate_monthly_trends": true,
+    "calculate_recent_trends": true,
+    "keep_structured_and_text_metrics_separate": true
+  },
+  "analysis_objectives": [
+    "Identify what customers like most",
+    "Identify what customers dislike most",
+    "Measure the exact overall rating distribution",
+    "Compare the collected review average with the Google overall rating",
+    "Analyze Food structured ratings and written review mentions",
+    "Analyze Service structured ratings and written review mentions",
+    "Analyze Atmosphere structured ratings and written review mentions",
+    "Measure the coverage percentage of every structured category rating",
+    "Measure how many reviews mention every important restaurant topic",
+    "Measure each topic as a percentage of all reviews",
+    "Measure each topic as a percentage of written reviews",
+    "Measure total mentions for every topic",
+    "Measure positive review count for every topic",
+    "Measure positive coverage percentage for every topic",
+    "Measure negative review count for every topic",
+    "Measure negative coverage percentage for every topic",
+    "Measure neutral review count and coverage where useful",
+    "Measure the average overall review rating when each topic is mentioned",
+    "Identify strongest dishes",
+    "Identify weakest dishes",
+    "Identify most frequently mentioned dishes",
+    "Identify most praised dishes",
+    "Identify most criticized dishes",
+    "Measure dish mention count",
+    "Measure dish mention coverage percentage",
+    "Measure positive coverage for every dish",
+    "Measure negative coverage for every dish",
+    "Measure average review rating when every dish is mentioned",
+    "Analyze menu categories",
+    "Analyze buffet performance",
+    "Analyze buffet food quality",
+    "Analyze buffet variety",
+    "Analyze buffet freshness",
+    "Analyze buffet replenishment",
+    "Analyze buffet value for money",
+    "Analyze buffet waiting and queue experience",
+    "Analyze price and value perception",
+    "Analyze waiting time",
+    "Analyze parking",
+    "Analyze cleanliness and hygiene",
+    "Analyze staff friendliness",
+    "Analyze staff attentiveness",
+    "Analyze staff professionalism",
+    "Analyze staff communication",
+    "Analyze hospitality",
+    "Analyze drinks",
+    "Analyze menu experience",
+    "Analyze tablet menu experience",
+    "Analyze menu clarity and ease of use",
+    "Analyze terrace and outdoor seating",
+    "Analyze indoor seating",
+    "Analyze shisha feedback",
+    "Analyze vegetarian and vegan feedback",
+    "Analyze portion size",
+    "Analyze food freshness",
+    "Analyze food temperature",
+    "Analyze reservations",
+    "Analyze takeaway",
+    "Analyze card payment feedback",
+    "Analyze family and group suitability",
+    "Identify causes of 1-star reviews",
+    "Identify causes of 2-star reviews",
+    "Identify the most common causes of low ratings",
+    "Identify drivers of 4-star reviews",
+    "Identify drivers of 5-star reviews",
+    "Identify the most common drivers of high customer satisfaction",
+    "Compare drivers of satisfaction with drivers of dissatisfaction",
+    "Analyze review volume by month",
+    "Analyze average overall rating by month",
+    "Analyze Food rating over time",
+    "Analyze Service rating over time",
+    "Analyze Atmosphere rating over time",
+    "Analyze topic sentiment over time",
+    "Analyze dish mentions and sentiment over time",
+    "Compare recent performance with historical performance",
+    "Detect whether customer satisfaction is improving or declining",
+    "Detect newly emerging complaints",
+    "Detect newly emerging strengths",
+    "Identify highest-priority improvement opportunities"
+  ],
+  "topics": [
+    {
+      "name": "Food",
+      "aliases": [
+        "food",
+        "meal",
+        "meals",
+        "dish",
+        "dishes",
+        "essen",
+        "speisen",
+        "gericht",
+        "gerichte",
+        "طعام",
+        "اكل",
+        "الأكل",
+        "وجبة",
+        "وجبات"
+      ]
+    },
+    {
+      "name": "Service",
+      "aliases": [
+        "service",
+        "waiter",
+        "waitress",
+        "server",
+        "staff",
+        "team",
+        "employee",
+        "employees",
+        "bedienung",
+        "kellner",
+        "kellnerin",
+        "personal",
+        "mitarbeiter",
+        "الخدمة",
+        "موظف",
+        "موظفين",
+        "الموظفين",
+        "نادل"
+      ]
+    },
+    {
+      "name": "Atmosphere",
+      "aliases": [
+        "atmosphere",
+        "ambience",
+        "ambiance",
+        "vibe",
+        "vibes",
+        "atmosphäre",
+        "ambiente",
+        "stimmung",
+        "جو",
+        "الأجواء"
+      ]
+    },
+    {
+      "name": "Buffet",
+      "aliases": [
+        "buffet",
+        "büfett",
+        "بوفيه"
+      ]
+    },
+    {
+      "name": "Price & Value",
+      "aliases": [
+        "price",
+        "prices",
+        "value for money",
+        "good value",
+        "worth the money",
+        "worth it",
+        "expensive",
+        "cheap",
+        "overpriced",
+        "preis",
+        "preise",
+        "preis leistung",
+        "preis-leistung",
+        "preisleistung",
+        "teuer",
+        "günstig",
+        "سعر",
+        "أسعار",
+        "الأسعار",
+        "غالي",
+        "رخيص",
+        "قيمة مقابل السعر"
+      ]
+    },
+    {
+      "name": "Staff Friendliness",
+      "aliases": [
+        "friendly staff",
+        "friendly waiter",
+        "friendly waitress",
+        "friendly service",
+        "polite staff",
+        "welcoming staff",
+        "freundliches personal",
+        "freundliche bedienung",
+        "freundlich",
+        "höflich",
+        "بشوش",
+        "ودود",
+        "محترم",
+        "لطيف"
+      ]
+    },
+    {
+      "name": "Staff Attentiveness",
+      "aliases": [
+        "attentive",
+        "attentive staff",
+        "attentive service",
+        "inattentive",
+        "ignored",
+        "unattentive",
+        "aufmerksam",
+        "unaufmerksam",
+        "اهتمام",
+        "مهتم",
+        "تجاهل"
+      ]
+    },
+    {
+      "name": "Staff Professionalism",
+      "aliases": [
+        "professional",
+        "professional service",
+        "unprofessional",
+        "professionalism",
+        "professionell",
+        "unprofessionell",
+        "احترافي",
+        "غير احترافي"
+      ]
+    },
+    {
+      "name": "Staff Communication",
+      "aliases": [
+        "communication",
+        "speaks quietly",
+        "speaking quietly",
+        "unclear",
+        "explanation",
+        "explained",
+        "communication problem",
+        "undeutlich",
+        "leise",
+        "erklärt",
+        "erklärung",
+        "التواصل",
+        "شرح",
+        "غير واضح"
+      ],
+      "positive_aliases": [
+        "explained clearly",
+        "clear explanation",
+        "verständlich erklärt",
+        "شرح واضح"
+      ],
+      "negative_aliases": [
+        "unclearly",
+        "speaks unclearly",
+        "spoke unclearly",
+        "communication problem",
+        "undeutlich",
+        "غير واضح"
+      ]
+    },
+    {
+      "name": "Waiting Time",
+      "aliases": [
+        "wait",
+        "waiting",
+        "waited",
+        "waiting time",
+        "slow service",
+        "long wait",
+        "wartezeit",
+        "warten",
+        "gewartet",
+        "lange gewartet",
+        "انتظار",
+        "انتظرنا",
+        "تأخير"
+      ],
+      "positive_aliases": [
+        "no wait",
+        "quick service",
+        "served quickly",
+        "keine wartezeit",
+        "schnell bedient"
+      ],
+      "negative_aliases": [
+        "long wait",
+        "slow service",
+        "waited too long",
+        "waited a very long time",
+        "lange gewartet",
+        "sehr lange gewartet",
+        "تأخير",
+        "انتظار طويل"
+      ]
+    },
+    {
+      "name": "Parking",
+      "aliases": [
+        "parking",
+        "parking lot",
+        "parking space",
+        "parking spaces",
+        "parken",
+        "parkplatz",
+        "parkplätze",
+        "موقف",
+        "مواقف",
+        "ركن السيارة"
+      ]
+    },
+    {
+      "name": "Cleanliness",
+      "aliases": [
+        "clean",
+        "cleanliness",
+        "dirty",
+        "hygiene",
+        "hygienic",
+        "sauber",
+        "sauberkeit",
+        "schmutzig",
+        "hygienisch",
+        "نظيف",
+        "نظافة",
+        "متسخ",
+        "صحي"
+      ]
+    },
+    {
+      "name": "Drinks",
+      "aliases": [
+        "drink",
+        "drinks",
+        "beverage",
+        "beverages",
+        "getränk",
+        "getränke",
+        "مشروب",
+        "مشروبات"
+      ]
+    },
+    {
+      "name": "Menu & Tablet",
+      "aliases": [
+        "menu",
+        "tablet",
+        "digital menu",
+        "menu tablet",
+        "tablet menu",
+        "speisekarte",
+        "tablet menü",
+        "digitale speisekarte",
+        "منيو",
+        "القائمة",
+        "قائمة الطعام"
+      ]
+    },
+    {
+      "name": "Terrace & Outdoor Seating",
+      "aliases": [
+        "terrace",
+        "outdoor",
+        "outdoor seating",
+        "outside seating",
+        "outside area",
+        "terrasse",
+        "außen",
+        "außenbereich",
+        "außensitzplätze",
+        "تراس",
+        "جلسات خارجية",
+        "خارجي"
+      ]
+    },
+    {
+      "name": "Indoor Seating",
+      "aliases": [
+        "indoor",
+        "indoor seating",
+        "inside",
+        "inside seating",
+        "inside area",
+        "innenbereich",
+        "drinnen",
+        "داخلي",
+        "جلسات داخلية"
+      ]
+    },
+    {
+      "name": "Shisha",
+      "aliases": [
+        "shisha",
+        "hookah",
+        "water pipe",
+        "wasserpfeife",
+        "شيشة",
+        "أرجيلة",
+        "نرجيلة"
+      ]
+    },
+    {
+      "name": "Vegetarian & Vegan",
+      "aliases": [
+        "vegetarian",
+        "vegetarian options",
+        "vegan",
+        "vegan options",
+        "vegetarisch",
+        "veganer",
+        "vegetarier",
+        "نباتي",
+        "نباتية",
+        "خيارات نباتية"
+      ]
+    },
+    {
+      "name": "Portion Size",
+      "aliases": [
+        "portion",
+        "portions",
+        "portion size",
+        "serving size",
+        "large portion",
+        "small portion",
+        "portionen",
+        "portionsgröße",
+        "große portion",
+        "kleine portion",
+        "حجم الوجبة",
+        "حجم الحصة",
+        "كمية"
+      ]
+    },
+    {
+      "name": "Freshness",
+      "aliases": [
+        "fresh",
+        "freshness",
+        "freshly",
+        "not fresh",
+        "frisch",
+        "frische",
+        "nicht frisch",
+        "طازج",
+        "طازجة",
+        "غير طازج"
+      ]
+    },
+    {
+      "name": "Food Temperature",
+      "aliases": [
+        "cold food",
+        "hot food",
+        "warm food",
+        "food temperature",
+        "served cold",
+        "served hot",
+        "kalt",
+        "kaltes essen",
+        "warmes essen",
+        "heiß",
+        "بارد",
+        "أكل بارد",
+        "ساخن",
+        "أكل ساخن"
+      ]
+    },
+    {
+      "name": "Hospitality",
+      "aliases": [
+        "hospitality",
+        "welcoming",
+        "welcome",
+        "made us feel welcome",
+        "host",
+        "gastfreundschaft",
+        "willkommen",
+        "حسن الضيافة",
+        "ضيافة",
+        "ترحيب"
+      ]
+    },
+    {
+      "name": "Reservations",
+      "aliases": [
+        "reservation",
+        "reservations",
+        "reserved",
+        "booking",
+        "booked",
+        "reservierung",
+        "reserviert",
+        "حجز",
+        "حجزنا"
+      ]
+    },
+    {
+      "name": "Takeaway",
+      "aliases": [
+        "takeaway",
+        "take away",
+        "to go",
+        "pickup",
+        "pick up",
+        "abholung",
+        "zum mitnehmen",
+        "سفري",
+        "تيك أواي"
+      ]
+    },
+    {
+      "name": "Card Payment",
+      "aliases": [
+        "card payment",
+        "pay by card",
+        "paid by card",
+        "credit card",
+        "debit card",
+        "kartenzahlung",
+        "mit karte",
+        "karte bezahlen",
+        "دفع بالبطاقة",
+        "بطاقة",
+        "فيزا"
+      ]
+    },
+    {
+      "name": "Family & Groups",
+      "aliases": [
+        "family",
+        "families",
+        "family friendly",
+        "group",
+        "groups",
+        "children",
+        "kids",
+        "familie",
+        "familien",
+        "gruppe",
+        "gruppen",
+        "kinder",
+        "عائلة",
+        "عائلات",
+        "مجموعة",
+        "مجموعات",
+        "أطفال"
+      ]
+    },
+    {
+      "name": "Food Quality",
+      "aliases": [
+        "food quality",
+        "quality of food",
+        "quality declined",
+        "high quality food",
+        "poor quality food",
+        "qualität des essens",
+        "essensqualität",
+        "qualität",
+        "جودة الطعام",
+        "جودة الأكل"
+      ]
+    },
+    {
+      "name": "Taste",
+      "aliases": [
+        "taste",
+        "tasty",
+        "delicious",
+        "flavor",
+        "flavour",
+        "bland",
+        "tasteless",
+        "geschmack",
+        "lecker",
+        "geschmacklos",
+        "مذاق",
+        "طعم",
+        "لذيذ",
+        "بدون طعم"
+      ],
+      "positive_aliases": [
+        "delicious",
+        "tasty",
+        "lecker",
+        "لذيذ"
+      ],
+      "negative_aliases": [
+        "tasteless",
+        "bland",
+        "geschmacklos",
+        "بدون طعم",
+        "unappealing"
+      ]
+    },
+    {
+      "name": "Food Variety",
+      "aliases": [
+        "variety",
+        "food variety",
+        "wide variety",
+        "selection",
+        "large selection",
+        "choice",
+        "vielfalt",
+        "auswahl",
+        "große auswahl",
+        "تنوع",
+        "تشكيلة",
+        "خيارات كثيرة"
+      ]
+    },
+    {
+      "name": "Food Presentation",
+      "aliases": [
+        "presentation",
+        "food presentation",
+        "presented",
+        "plating",
+        "serving presentation",
+        "präsentation",
+        "angerichtet",
+        "تقديم الطعام",
+        "شكل الطبق"
+      ]
+    },
+    {
+      "name": "Authenticity",
+      "aliases": [
+        "authentic",
+        "authentic food",
+        "traditional",
+        "traditional food",
+        "original taste",
+        "authentisch",
+        "traditionell",
+        "أصيل",
+        "أكل عربي أصيل",
+        "تقليدي"
+      ]
+    },
+    {
+      "name": "Meat Quality",
+      "aliases": [
+        "meat quality",
+        "tender meat",
+        "tough meat",
+        "dry meat",
+        "juicy meat",
+        "fleischqualität",
+        "zartes fleisch",
+        "trockenes fleisch",
+        "جودة اللحم",
+        "لحم طري",
+        "لحم ناشف"
+      ]
+    },
+    {
+      "name": "Buffet Variety",
+      "aliases": [
+        "buffet variety",
+        "buffet selection",
+        "buffet choice",
+        "large buffet",
+        "buffetauswahl",
+        "buffet auswahl",
+        "تنوع البوفيه",
+        "تشكيلة البوفيه"
+      ]
+    },
+    {
+      "name": "Buffet Replenishment",
+      "aliases": [
+        "refill",
+        "refilled",
+        "replenished",
+        "replenishment",
+        "empty buffet",
+        "buffet empty",
+        "nachgefüllt",
+        "nachfüllen",
+        "buffet leer",
+        "تعبئة البوفيه",
+        "البوفيه فاضي",
+        "إعادة التعبئة"
+      ]
+    },
+    {
+      "name": "Noise",
+      "aliases": [
+        "noise",
+        "noisy",
+        "quiet",
+        "loud",
+        "noise level",
+        "laut",
+        "ruhig",
+        "geräuschpegel",
+        "ضوضاء",
+        "مزعج",
+        "هادئ"
+      ]
+    },
+    {
+      "name": "Comfort",
+      "aliases": [
+        "comfortable",
+        "uncomfortable",
+        "comfort",
+        "cozy",
+        "gemütlich",
+        "ungemütlich",
+        "komfortabel",
+        "مريح",
+        "غير مريح"
+      ]
+    }
+  ],
+  "website": "https://www.alassiel.de/",
+  "menu_urls": [
+    "https://www.alassiel.de/"
+  ],
+  "profile_enrichment": {
+    "source": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+    "source_snapshot_date": "2026-09-20",
+    "confidence": "medium",
+    "note": "Breakfast, catering/events, website, and bar/drinks were cross-checked; validated menu catalog and review analysis were not changed."
+  }
+}

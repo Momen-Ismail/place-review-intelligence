@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "source_type": "human_maintained_internal_input",
+    "review_derived": false,
+    "purpose": "Internal observations and proposed experiments kept separate from customer-review evidence."
+  },
+  "google_profile_reputation": {
+    "parking_available_but_not_promoted_in_profile": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Management believes available parking is not promoted clearly enough on the Google profile; this is not proven by review data."
+    },
+    "owner_review_response_process_needs_improvement": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Internal process observation to be considered alongside the calculated owner-response metrics."
+    }
+  },
+  "menu": {
+    "menu_considered_static": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Management considers the current menu experience static."
+    },
+    "favourites_manually_selected": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "The favourites section is selected manually rather than from sales or review-attention data."
+    },
+    "favourites_not_regularly_updated": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Management reports that favourites are not refreshed regularly."
+    },
+    "weekly_offers_available": {
+      "value": false,
+      "classification": "internal_observation",
+      "note": "No weekly-offer programme is currently reported by management."
+    },
+    "food_drink_bundles_available": {
+      "value": false,
+      "classification": "internal_observation",
+      "note": "No food-and-drink bundled offers are currently reported by management."
+    },
+    "menu_should_influence_customer_choice_more": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Management wants the menu to guide customer choice more actively."
+    }
+  },
+  "media": {
+    "dish_video_or_richer_media_test_proposed": {
+      "value": true,
+      "classification": "proposed_experiment",
+      "note": "Test richer dish media or short video before treating it as an established practice."
+    }
+  },
+  "customer_experience": {
+    "welcome_process_needs_review": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Management wants to review the arrival and welcome process."
+    },
+    "proactive_menu_guidance_proposed": {
+      "value": true,
+      "classification": "proposed_experiment",
+      "note": "Test proactive menu guidance and measure customer response."
+    },
+    "complimentary_welcome_appetizer_or_small_gesture_test_proposed": {
+      "value": true,
+      "classification": "proposed_experiment",
+      "note": "Test a small welcome gesture; no benefit is assumed before measurement."
+    }
+  },
+  "management_preferences": {
+    "four_week_improvement_plan_requested": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "A measurable four-week plan will be designed later; no targets are set in this analysis round."
+    },
+    "period_comparisons_preferred_over_lifetime_only": {
+      "value": true,
+      "classification": "internal_observation",
+      "note": "Management wants period comparisons to supplement lifetime totals."
+    }
+  }
+}

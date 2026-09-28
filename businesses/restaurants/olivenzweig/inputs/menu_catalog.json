@@ -1,0 +1,2973 @@
+{
+  "restaurant": "Olivenzweig Restaurant",
+  "snapshot_date": "2026-09-21",
+  "source": "See source_register.json and each item source field",
+  "categories": [
+    "Coffee",
+    "Cold Drinks",
+    "Cold Starters",
+    "Extra Sides",
+    "Grill",
+    "Home-made Iced Tea",
+    "Kids & Desserts",
+    "Milkshakes",
+    "Mocktails",
+    "Salads",
+    "Smoked Meat",
+    "Tea",
+    "Warm Starters & Sandwiches",
+    "Weekend Brunch"
+  ],
+  "items": [
+    {
+      "category": "Salads",
+      "name": "Fattoush",
+      "english_name": "Fattoush",
+      "description": null,
+      "price_eur": 9.5,
+      "price": 9.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "fattush",
+        "فتوش"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Salads",
+      "name": "Auberginen Fattoush",
+      "english_name": "Auberginen Fattoush",
+      "description": null,
+      "price_eur": 9.5,
+      "price": 9.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Salads",
+      "name": "Tabouleh",
+      "english_name": "Tabouleh",
+      "description": null,
+      "price_eur": 9.5,
+      "price": 9.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "tabbouleh",
+        "tabouli",
+        "تبولة"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Salads",
+      "name": "Orientalischer Salat",
+      "english_name": "Orientalischer Salat",
+      "description": null,
+      "price_eur": 9.5,
+      "price": 9.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Hummus",
+      "english_name": "Hummus",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "humus",
+        "houmous",
+        "حمص"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Hummus Beiruty",
+      "english_name": "Hummus Beiruty",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Mutabbal",
+      "english_name": "Mutabbal",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "moutabal",
+        "متبل"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Baba Ghanoush",
+      "english_name": "Baba Ghanoush",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "baba ganoush",
+        "بابا غنوج"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Muhammara",
+      "english_name": "Muhammara",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Yalangi (5 Stk.)",
+      "english_name": "Yalangi (5 Stk.)",
+      "description": null,
+      "price_eur": 8.5,
+      "price": 8.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Frittierter Blumenkohl Tahini-Dip",
+      "english_name": "Frittierter Blumenkohl Tahini-Dip",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Gebratene Auberginen mit Tahini Dip",
+      "english_name": "Gebratene Auberginen mit Tahini Dip",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Harak Osbao",
+      "english_name": "Harak Osbao",
+      "description": null,
+      "price_eur": 12.9,
+      "price": 12.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Knoblauchcreme",
+      "english_name": "Knoblauchcreme",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Mixed Pickles",
+      "english_name": "Mixed Pickles",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Starters",
+      "name": "Vorspeise (5 Platte)",
+      "english_name": "Vorspeise (5 Platte)",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Hummus mit Fleisch",
+      "english_name": "Hummus mit Fleisch",
+      "description": null,
+      "price_eur": 14.0,
+      "price": 14.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Hähnchenflügel im Tontopf",
+      "english_name": "Hähnchenflügel im Tontopf",
+      "description": null,
+      "price_eur": 12.9,
+      "price": 12.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Käse-Sambousek (4)",
+      "english_name": "Käse-Sambousek (4)",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Spinat-Sambousek (4)",
+      "english_name": "Spinat-Sambousek (4)",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Fleisch-Sambousek (4)",
+      "english_name": "Fleisch-Sambousek (4)",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "M'sakhan Röllchen (3)",
+      "english_name": "M'sakhan Röllchen (3)",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Frittierte Kibbeh (3)",
+      "english_name": "Frittierte Kibbeh (3)",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Gegrillte Kibbeh (1)",
+      "english_name": "Gegrillte Kibbeh (1)",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Gebratene Hähnchenleber",
+      "english_name": "Gebratene Hähnchenleber",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Toschka",
+      "english_name": "Toschka",
+      "description": null,
+      "price_eur": 13.9,
+      "price": 13.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Maria",
+      "english_name": "Maria",
+      "description": null,
+      "price_eur": 12.9,
+      "price": 12.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "French fries",
+      "english_name": "French fries",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Scharfe Kartoffeln",
+      "english_name": "Scharfe Kartoffeln",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Warm Starters & Sandwiches",
+      "name": "Falafel-Teller",
+      "english_name": "Falafel-Teller",
+      "description": null,
+      "price_eur": 11.9,
+      "price": 11.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "falafel plate",
+        "falafel platter"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Aleppo Kebab",
+      "english_name": "Aleppo Kebab",
+      "description": null,
+      "price_eur": 18.9,
+      "price": 18.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Kirsch Kebab",
+      "english_name": "Kirsch Kebab",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Ka'b Elghazal Kebab",
+      "english_name": "Ka'b Elghazal Kebab",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Shish Tawook",
+      "english_name": "Shish Tawook",
+      "description": null,
+      "price_eur": 19.9,
+      "price": 19.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "shish taouk",
+        "chicken skewer"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gegrillte Lammspieße",
+      "english_name": "Gegrillte Lammspieße",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Lammkotelett",
+      "english_name": "Lammkotelett",
+      "description": null,
+      "price_eur": 28.9,
+      "price": 28.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb chops",
+        "lamb chop"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gemischter Grillteller 1 Person",
+      "english_name": "Gemischter Grillteller 1 Person",
+      "description": null,
+      "price_eur": 28.5,
+      "price": 28.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "mixed grill platter",
+        "mixed grill"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gemischter Grillteller 2 Personen",
+      "english_name": "Gemischter Grillteller 2 Personen",
+      "description": null,
+      "price_eur": 55.9,
+      "price": 55.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gegrilltes Hähnchen",
+      "english_name": "Gegrilltes Hähnchen",
+      "description": null,
+      "price_eur": 16.9,
+      "price": 16.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gegrillter Fisch Dorade",
+      "english_name": "Gegrillter Fisch Dorade",
+      "description": null,
+      "price_eur": 29.5,
+      "price": 29.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "dorade",
+        "sea bream"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Smoked Meat",
+      "name": "Lammhaxe",
+      "english_name": "Lammhaxe",
+      "description": null,
+      "price_eur": 29.9,
+      "price": 29.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Smoked Meat",
+      "name": "Lammnacken",
+      "english_name": "Lammnacken",
+      "description": null,
+      "price_eur": 38.5,
+      "price": 38.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Smoked Meat",
+      "name": "Rinderkotelett",
+      "english_name": "Rinderkotelett",
+      "description": null,
+      "price_eur": 34.5,
+      "price": 34.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Smoked Meat",
+      "name": "Lammschulter für 2",
+      "english_name": "Lammschulter für 2",
+      "description": null,
+      "price_eur": 69.5,
+      "price": 69.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Smoked Meat",
+      "name": "Geräucherte Platte für 2",
+      "english_name": "Geräucherte Platte für 2",
+      "description": null,
+      "price_eur": 69.5,
+      "price": 69.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Smoked Meat",
+      "name": "Geräucherte Platte für 4",
+      "english_name": "Geräucherte Platte für 4",
+      "description": null,
+      "price_eur": 120.0,
+      "price": 120.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Extra Sides",
+      "name": "Süßkartoffel",
+      "english_name": "Süßkartoffel",
+      "description": null,
+      "price_eur": 6.9,
+      "price": 6.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Extra Sides",
+      "name": "French fries (Beilage)",
+      "english_name": "French fries (Beilage)",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Extra Sides",
+      "name": "Reis",
+      "english_name": "Reis",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Extra Sides",
+      "name": "Knoblauchcreme (Beilage)",
+      "english_name": "Knoblauchcreme (Beilage)",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Extra Sides",
+      "name": "Brot (4 Stk.)",
+      "english_name": "Brot (4 Stk.)",
+      "description": null,
+      "price_eur": 3.0,
+      "price": 3.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Kids & Desserts",
+      "name": "Crispy chicken (3 Stück)",
+      "english_name": "Crispy chicken (3 Stück)",
+      "description": null,
+      "price_eur": 12.9,
+      "price": 12.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Kids & Desserts",
+      "name": "Arabische Eiscreme",
+      "english_name": "Arabische Eiscreme",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "arabic ice cream"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Kids & Desserts",
+      "name": "Daily sweets",
+      "english_name": "Daily sweets",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Schwarztee",
+      "english_name": "Schwarztee",
+      "description": null,
+      "price_eur": 4.2,
+      "price": 4.2,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "black tea",
+        "tea"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Frischeminz-Schwarztee",
+      "english_name": "Frischeminz-Schwarztee",
+      "description": null,
+      "price_eur": 4.2,
+      "price": 4.2,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Kardamom-Schwarztee",
+      "english_name": "Kardamom-Schwarztee",
+      "description": null,
+      "price_eur": 4.2,
+      "price": 4.2,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Zimt Orangen Schwarztee",
+      "english_name": "Zimt Orangen Schwarztee",
+      "description": null,
+      "price_eur": 3.7,
+      "price": 3.7,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Ingwer-Zitronen-Schwarztee",
+      "english_name": "Ingwer-Zitronen-Schwarztee",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Rosen Schwarztee",
+      "english_name": "Rosen Schwarztee",
+      "description": null,
+      "price_eur": 4.2,
+      "price": 4.2,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Grüner Tee",
+      "english_name": "Grüner Tee",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Kamillentee",
+      "english_name": "Kamillentee",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Frischer Minztee",
+      "english_name": "Frischer Minztee",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Tea",
+      "name": "Frischer Ingwertee",
+      "english_name": "Frischer Ingwertee",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Espresso",
+      "english_name": "Espresso",
+      "description": null,
+      "price_eur": 3.7,
+      "price": 3.7,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Doppio",
+      "english_name": "Doppio",
+      "description": null,
+      "price_eur": 4.5,
+      "price": 4.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Arabisch Kaffee",
+      "english_name": "Arabisch Kaffee",
+      "description": null,
+      "price_eur": 3.7,
+      "price": 3.7,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Kaffee Creme",
+      "english_name": "Kaffee Creme",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Cappuccino",
+      "english_name": "Cappuccino",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Schokochino",
+      "english_name": "Schokochino",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Coffee",
+      "name": "Latte Macchiato",
+      "english_name": "Latte Macchiato",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Coca-Cola 0.2l",
+      "english_name": "Coca-Cola 0.2l",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Coca-Cola Zero 0.2l",
+      "english_name": "Coca-Cola Zero 0.2l",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Fanta 0.2l",
+      "english_name": "Fanta 0.2l",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Sprite 0.2l",
+      "english_name": "Sprite 0.2l",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Ayran",
+      "english_name": "Ayran",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Ginger Ale 0.2l",
+      "english_name": "Ginger Ale 0.2l",
+      "description": null,
+      "price_eur": 4.2,
+      "price": 4.2,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Wasser 0.2l",
+      "english_name": "Wasser 0.2l",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Wasser 0.7l",
+      "english_name": "Wasser 0.7l",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Orangensaft",
+      "english_name": "Orangensaft",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Apfelsaft",
+      "english_name": "Apfelsaft",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Mangosaft",
+      "english_name": "Mangosaft",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Ananassaft",
+      "english_name": "Ananassaft",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Fritz-Apfelschorle",
+      "english_name": "Fritz-Apfelschorle",
+      "description": null,
+      "price_eur": 4.2,
+      "price": 4.2,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Bitburger Alkoholfrei",
+      "english_name": "Bitburger Alkoholfrei",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "name": "Weissbräu Alkoholfrei",
+      "english_name": "Weissbräu Alkoholfrei",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Home-made Iced Tea",
+      "name": "Himbeere Limette",
+      "english_name": "Himbeere Limette",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Home-made Iced Tea",
+      "name": "Mango Maracuja",
+      "english_name": "Mango Maracuja",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Home-made Iced Tea",
+      "name": "Apfel Limette",
+      "english_name": "Apfel Limette",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Home-made Iced Tea",
+      "name": "Zitrone Limette",
+      "english_name": "Zitrone Limette",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Home-made Iced Tea",
+      "name": "Wassermelone Limette",
+      "english_name": "Wassermelone Limette",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Mojito Classic",
+      "english_name": "Mojito Classic",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Mojito Strawberry",
+      "english_name": "Mojito Strawberry",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Mojito Mango",
+      "english_name": "Mojito Mango",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Hugo",
+      "english_name": "Hugo",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Swimmingpool",
+      "english_name": "Swimmingpool",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Ipanema",
+      "english_name": "Ipanema",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Mocktails",
+      "name": "Polo",
+      "english_name": "Polo",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Milkshakes",
+      "name": "Erdbeer-Milkshake",
+      "english_name": "Erdbeer-Milkshake",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Milkshakes",
+      "name": "Vanille-Milkshake",
+      "english_name": "Vanille-Milkshake",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Milkshakes",
+      "name": "Schoko-Milkshake",
+      "english_name": "Schoko-Milkshake",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Milkshakes",
+      "name": "Pisto-Milkshake",
+      "english_name": "Pisto-Milkshake",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "pistachio milkshake",
+        "pisto milkshake"
+      ],
+      "source": "official_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Frühstücksteller für eine Person",
+      "english_name": "Frühstücksteller für eine Person",
+      "description": null,
+      "price_eur": 20.0,
+      "price": 20.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "official_signature_positioning"
+      ],
+      "aliases": [
+        "breakfast platter for one",
+        "brunch platter"
+      ],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Frühstücksteller für zwei Personen",
+      "english_name": "Frühstücksteller für zwei Personen",
+      "description": null,
+      "price_eur": 38.0,
+      "price": 38.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "official_signature_positioning"
+      ],
+      "aliases": [
+        "breakfast platter for two",
+        "brunch for two"
+      ],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Wintersuppe",
+      "english_name": "Wintersuppe",
+      "description": null,
+      "price_eur": 6.5,
+      "price": 6.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Foul",
+      "english_name": "Foul",
+      "description": null,
+      "price_eur": 11.9,
+      "price": 11.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Hummus (Weekend Brunch)",
+      "english_name": "Hummus (Weekend Brunch)",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "weekend brunch Hummus"
+      ],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ],
+      "original_name": "Hummus",
+      "canonicalization_note": "Analytical key disambiguated; the printed menu name is preserved in original_name."
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Falafel",
+      "english_name": "Falafel",
+      "description": null,
+      "price_eur": 9.5,
+      "price": 9.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Eier mit Avocado",
+      "english_name": "Eier mit Avocado",
+      "description": null,
+      "price_eur": 11.9,
+      "price": 11.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Omelett",
+      "english_name": "Omelett",
+      "description": null,
+      "price_eur": 6.9,
+      "price": 6.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Labneh",
+      "english_name": "Labneh",
+      "description": null,
+      "price_eur": 6.0,
+      "price": 6.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Gemüseteller",
+      "english_name": "Gemüseteller",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Käseteller",
+      "english_name": "Käseteller",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Shakshuka",
+      "english_name": "Shakshuka",
+      "description": null,
+      "price_eur": 11.9,
+      "price": 11.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Muhammara (Weekend Brunch)",
+      "english_name": "Muhammara (Weekend Brunch)",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "weekend brunch Muhammara"
+      ],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ],
+      "original_name": "Muhammara",
+      "canonicalization_note": "Analytical key disambiguated; the printed menu name is preserved in original_name."
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Fatteh",
+      "english_name": "Fatteh",
+      "description": null,
+      "price_eur": 13.9,
+      "price": 13.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Manakish mit Fleisch",
+      "english_name": "Manakish mit Fleisch",
+      "description": null,
+      "price_eur": 6.0,
+      "price": 6.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Manakish mit Käse",
+      "english_name": "Manakish mit Käse",
+      "description": null,
+      "price_eur": 3.9,
+      "price": 3.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Manakish mit Zaatar",
+      "english_name": "Manakish mit Zaatar",
+      "description": null,
+      "price_eur": 3.9,
+      "price": 3.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Gemischter Manakish-Teller",
+      "english_name": "Gemischter Manakish-Teller",
+      "description": null,
+      "price_eur": 25.0,
+      "price": 25.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Mamounieh",
+      "english_name": "Mamounieh",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Sahlab",
+      "english_name": "Sahlab",
+      "description": null,
+      "price_eur": 4.9,
+      "price": 4.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Ayran (Weekend Brunch)",
+      "english_name": "Ayran (Weekend Brunch)",
+      "description": null,
+      "price_eur": 2.9,
+      "price": 2.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "weekend brunch Ayran"
+      ],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ],
+      "original_name": "Ayran",
+      "canonicalization_note": "Analytical key disambiguated; the printed menu name is preserved in original_name."
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Tee mit frischer Minze",
+      "english_name": "Tee mit frischer Minze",
+      "description": null,
+      "price_eur": 4.7,
+      "price": 4.7,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Schwarzer Tee",
+      "english_name": "Schwarzer Tee",
+      "description": null,
+      "price_eur": 3.7,
+      "price": 3.7,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Frischer Orangensaft",
+      "english_name": "Frischer Orangensaft",
+      "description": null,
+      "price_eur": 5.9,
+      "price": 5.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Ayran mit Minze",
+      "english_name": "Ayran mit Minze",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Weekend Brunch",
+      "name": "Kaffee mit Kardamom",
+      "english_name": "Kaffee mit Kardamom",
+      "description": null,
+      "price_eur": 3.5,
+      "price": 3.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [],
+      "source": "official_brunch_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "high",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "price_conflict_policy": "Conflicting prices remain source-specific and are not silently merged.",
+  "source_completion": {
+    "supporting_document": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+    "supporting_document_snapshot_date": "2026-09-20",
+    "note": "Full official main (102) and weekend-brunch (26) menu inventory cross-checked against supplied research PDF."
+  }
+}

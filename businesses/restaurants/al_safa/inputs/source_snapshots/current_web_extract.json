@@ -1,0 +1,65 @@
+{
+  "restaurant": "Al Safa Restaurant",
+  "snapshot_date": "2026-09-21",
+  "profile_claims": {
+    "address": "Alte Bahnhofstr. 32, 53173 Bonn",
+    "opening_hours": {
+      "monday": "12:00-23:00",
+      "tuesday": "12:00-23:00",
+      "wednesday": "12:00-23:00",
+      "thursday": "12:00-23:00",
+      "friday": "12:00-23:00",
+      "saturday": "12:00-23:00",
+      "sunday": "12:00-23:00"
+    },
+    "features": {
+      "dine_in": true,
+      "takeaway": true,
+      "delivery": null,
+      "reservations": true,
+      "outdoor_seating": true,
+      "indoor_seating": true,
+      "parking_available": null,
+      "payment_methods": [
+        "cash"
+      ],
+      "halal_positioning": null,
+      "buffet": null,
+      "catering": null,
+      "events": null,
+      "bar_drinks": null,
+      "family_groups": true,
+      "wheelchair_accessible_seating": true
+    },
+    "distinctive_offer": [
+      "family-oriented, high-volume value positioning (supporting supplied research)",
+      "generous portions and complimentary items noted in supplied research",
+      "grill, daily dishes, and a large mixed Al Safa platter"
+    ]
+  },
+  "menu_summary": {
+    "categories": [
+      "Chicken",
+      "Desserts",
+      "Drinks",
+      "Fish",
+      "Grill",
+      "Main Dishes",
+      "Sandwiches",
+      "Soups",
+      "Starters"
+    ],
+    "item_count": 46,
+    "priced_items": 40
+  },
+  "source_urls": [
+    "https://alsafarestaurant.com/",
+    "https://www.speisekarte.de/bonn/restaurant/al_safa_restaurant/speisekarte",
+    "https://alsafa-restaurant.eu/",
+    "https://weur-cdn.speisekarte.menu/storage/media/companies_menu_pdf/114136566/al-safa-bonn-speisekarte.pdf",
+    "https://de.restaurantguru.com/al-safa-Bonn",
+    "https://www.online-tischreservierung.de/restaurant/index/Nordrhein-Westfalen/Bonn/T%C3%BCrkisch/aab8o4e09k/Al%20Safa%20Restaurant%20%28Orientalische%20K%C3%BCche%29/",
+    "https://www.google.com/maps/place/Al+Safa+Restaurant/@50.6848367,7.1569974,17z/data=!4m8!3m7!1s0x47bee46d93a79a23:0x591d8b3a13468bfd!8m2!3d50.6848367!4d7.1569974!9m1!1b1!16s%2Fg%2F11cn2tr8qd"
+  ],
+  "refresh_note": "Local September 2026 snapshot; source priority and item-level conflicts remain explicit."
+}

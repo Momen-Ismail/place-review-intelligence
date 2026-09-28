@@ -1,0 +1,1357 @@
+{
+  "restaurant": "Al Safa Restaurant",
+  "snapshot_date": "2026-09-21",
+  "source": "See source_register.json and each item source field",
+  "categories": [
+    "Chicken",
+    "Desserts",
+    "Drinks",
+    "Fish",
+    "Grill",
+    "Main Dishes",
+    "Sandwiches",
+    "Soups",
+    "Starters"
+  ],
+  "items": [
+    {
+      "category": "Starters",
+      "name": "Kleine Vorspeise",
+      "english_name": "Kleine Vorspeise",
+      "description": null,
+      "price_eur": 9.0,
+      "price": 9.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "small appetizer platter",
+        "small mezze"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Safa Vorspeise",
+      "english_name": "Safa Vorspeise",
+      "description": null,
+      "price_eur": 12.5,
+      "price": 12.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "safa appetizer",
+        "safa mezze"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Hummus",
+      "english_name": "Hummus",
+      "description": null,
+      "price_eur": 4.0,
+      "price": 4.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "humus",
+        "houmous",
+        "حمص"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Tabule",
+      "english_name": "Tabule",
+      "description": null,
+      "price_eur": 4.0,
+      "price": 4.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "tabbouleh",
+        "tabouleh",
+        "تبولة"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Auberginenpaste",
+      "english_name": "Auberginenpaste",
+      "description": null,
+      "price_eur": 4.0,
+      "price": 4.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "moutabal",
+        "mutabbal",
+        "eggplant dip"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Gefüllte Weinblätter",
+      "english_name": "Gefüllte Weinblätter",
+      "description": null,
+      "price_eur": 4.5,
+      "price": 4.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "stuffed vine leaves",
+        "yalanji"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Falafel Teller",
+      "english_name": "Falafel Teller",
+      "description": null,
+      "price_eur": 7.5,
+      "price": 7.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "falafel plate",
+        "falafel platter"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 10.0,
+          "source": "supplied physical menu; date not stated",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 7.5,
+          "alternate_price_eur": 10.0,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Asia-Teller",
+      "english_name": "Asia-Teller",
+      "description": null,
+      "price_eur": 10.0,
+      "price": 10.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "large falafel plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Starters",
+      "name": "Halloumi Teller",
+      "english_name": "Halloumi Teller",
+      "description": null,
+      "price_eur": 8.5,
+      "price": 8.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "halloumi plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Döner Sandwich",
+      "english_name": "Döner Sandwich",
+      "description": null,
+      "price_eur": 5.0,
+      "price": 5.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "doner sandwich",
+        "shawarma sandwich"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 7.0,
+          "source": "supplied physical menu; date not stated",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 5.0,
+          "alternate_price_eur": 7.0,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Dürüm",
+      "english_name": "Dürüm",
+      "description": null,
+      "price_eur": 5.0,
+      "price": 5.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "durum",
+        "wrap"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Falafel Sandwich",
+      "english_name": "Falafel Sandwich",
+      "description": null,
+      "price_eur": 4.0,
+      "price": 4.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "falafel wrap"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Halloumi Sandwich",
+      "english_name": "Halloumi Sandwich",
+      "description": null,
+      "price_eur": 4.0,
+      "price": 4.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "halloumi wrap"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Reisteller",
+      "english_name": "Reisteller",
+      "description": null,
+      "price_eur": 5.0,
+      "price": 5.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "rice plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Biryani",
+      "english_name": "Biryani",
+      "description": null,
+      "price_eur": 6.0,
+      "price": 6.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "chicken biryani"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Sac Kawerma",
+      "english_name": "Sac Kawerma",
+      "description": null,
+      "price_eur": 13.0,
+      "price": 13.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "sac kavurma",
+        "sac kawarma"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 16.0,
+          "source": "dated public listing 2026-04-27",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 13.0,
+          "alternate_price_eur": 16.0,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Kosi Lammhaxe",
+      "english_name": "Kosi Lammhaxe",
+      "description": null,
+      "price_eur": 15.0,
+      "price": 15.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "quzi",
+        "qoozi",
+        "lamb shank"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 20.0,
+          "source": "dated public listing 2026-04-27",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 15.0,
+          "alternate_price_eur": 20.0,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Lammgulasch",
+      "english_name": "Lammgulasch",
+      "description": null,
+      "price_eur": 7.0,
+      "price": 7.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb stew"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Soups",
+      "name": "Linsensuppe",
+      "english_name": "Linsensuppe",
+      "description": null,
+      "price_eur": 4.5,
+      "price": 4.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "lentil soup"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 5.5,
+          "source": "supplied physical menu; date not stated",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 4.5,
+          "alternate_price_eur": 5.5,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Döner Teller mit Salat",
+      "english_name": "Döner Teller mit Salat",
+      "description": null,
+      "price_eur": 7.5,
+      "price": 7.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "doner plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Döner Teller mit Beilage",
+      "english_name": "Döner Teller mit Beilage",
+      "description": null,
+      "price_eur": 10.0,
+      "price": 10.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "doner platter",
+        "shawarma plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 11.0,
+          "source": "supplied physical menu; date not stated",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 10.0,
+          "alternate_price_eur": 11.0,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Hähnchen Teller",
+      "english_name": "Hähnchen Teller",
+      "description": null,
+      "price_eur": 11.0,
+      "price": 11.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "chicken skewer plate",
+        "shish taouk"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Hähnchen Teller mit Beilage",
+      "english_name": "Hähnchen Teller mit Beilage",
+      "description": null,
+      "price_eur": 13.5,
+      "price": 13.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "chicken grill with rice",
+        "shish taouk plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gemischter Grillteller",
+      "english_name": "Gemischter Grillteller",
+      "description": null,
+      "price_eur": 12.0,
+      "price": 12.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "mixed grill",
+        "mixed grill plate"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gemischter Grillteller mit Beilage",
+      "english_name": "Gemischter Grillteller mit Beilage",
+      "description": null,
+      "price_eur": 14.5,
+      "price": 14.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "mixed grill platter"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 16.5,
+          "source": "supplied physical menu; date not stated",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 14.5,
+          "alternate_price_eur": 16.5,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Fish",
+      "name": "Dorade",
+      "english_name": "Dorade",
+      "description": null,
+      "price_eur": 13.0,
+      "price": 13.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "dorado",
+        "sea bream"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Fish",
+      "name": "Dorade mit Reis",
+      "english_name": "Dorade mit Reis",
+      "description": null,
+      "price_eur": 15.5,
+      "price": 15.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "dorade with rice",
+        "sea bream with rice"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 18.5,
+          "source": "supplied physical menu; date not stated",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 15.5,
+          "alternate_price_eur": 18.5,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Chicken",
+      "name": "Halbes Hähnchen",
+      "english_name": "Halbes Hähnchen",
+      "description": null,
+      "price_eur": 6.0,
+      "price": 6.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "half chicken",
+        "grilled half chicken"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Drinks",
+      "name": "Soft Drink 0.33l",
+      "english_name": "Soft Drink 0.33l",
+      "description": null,
+      "price_eur": 2.0,
+      "price": 2.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "cola",
+        "coca cola",
+        "fanta",
+        "sprite"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ],
+      "price_observations": [
+        {
+          "price_eur": 2.8,
+          "source": "dated public listing 2026-04-27",
+          "captured_in": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+          "pdf_snapshot_date": "2026-09-20"
+        }
+      ],
+      "price_conflicts": [
+        {
+          "retained_price_eur": 2.0,
+          "alternate_price_eur": 2.8,
+          "resolution": "Existing 2026-09-21 source observation retained; PDF evidence preserved separately rather than silently overwriting it."
+        }
+      ]
+    },
+    {
+      "category": "Drinks",
+      "name": "Ayran 0.25l",
+      "english_name": "Ayran 0.25l",
+      "description": null,
+      "price_eur": 2.0,
+      "price": 2.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "ayran"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Drinks",
+      "name": "Frischer Orangensaft",
+      "english_name": "Frischer Orangensaft",
+      "description": null,
+      "price_eur": 3.0,
+      "price": 3.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "fresh orange juice",
+        "orange juice"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Desserts",
+      "name": "Baklava",
+      "english_name": "Baklava",
+      "description": null,
+      "price_eur": 1.0,
+      "price": 1.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "baklawa"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Desserts",
+      "name": "Knafeh",
+      "english_name": "Knafeh",
+      "description": null,
+      "price_eur": 4.5,
+      "price": 4.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "kunafa",
+        "kanafeh",
+        "كنافة"
+      ],
+      "source": "al_safa_current_public_website_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium",
+          "note": "Retained when not contradicted by higher-priority/newer evidence; catalog remains a captured union, not a complete official menu."
+        }
+      ]
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Türkische Pizza mit Salat",
+      "english_name": "Türkische Pizza mit Salat",
+      "description": null,
+      "price_eur": 6.0,
+      "price": 6.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "turkish pizza"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ],
+      "price_conflict": {
+        "supplied_physical_menu_price_eur": 5.0,
+        "resolution": "newer dated public listing retained"
+      }
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Gefüllte Auberginen",
+      "english_name": "Gefüllte Auberginen",
+      "description": null,
+      "price_eur": 6.5,
+      "price": 6.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "stuffed eggplant"
+      ],
+      "source": "supplied_physical_menu_date_unknown",
+      "source_date": "date_not_stated",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Bohnen",
+      "english_name": "Bohnen",
+      "description": null,
+      "price_eur": 7.5,
+      "price": 7.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "beans"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Lammteller - 2 Lammspieße",
+      "english_name": "Lammteller - 2 Lammspieße",
+      "description": null,
+      "price_eur": 15.0,
+      "price": 15.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb plate",
+        "lamb skewers"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Chicken",
+      "name": "Hähnchenkeule - 2 ohne Knochen",
+      "english_name": "Hähnchenkeule - 2 ohne Knochen",
+      "description": null,
+      "price_eur": 13.5,
+      "price": 13.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "boneless chicken thigh"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Lammkoteletts - 4 Stück",
+      "english_name": "Lammkoteletts - 4 Stück",
+      "description": null,
+      "price_eur": 17.0,
+      "price": 17.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb chops"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ],
+      "price_conflict": {
+        "supplied_physical_menu_price_eur": 16.5,
+        "resolution": "newer dated public listing retained"
+      }
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Okra",
+      "english_name": "Okra",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "okra stew"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Chicken",
+      "name": "Chicken Nuggets mit Pommes",
+      "english_name": "Chicken Nuggets mit Pommes",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "chicken nuggets"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Hamburger mit Salat",
+      "english_name": "Hamburger mit Salat",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "hamburger"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Chicken",
+      "name": "Hähnchen mit Kartoffeln",
+      "english_name": "Hähnchen mit Kartoffeln",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "chicken with potatoes"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Koba Teller",
+      "english_name": "Koba Teller",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "kibbeh plate"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Main Dishes",
+      "name": "Dolma (nur samstags)",
+      "english_name": "Dolma (nur samstags)",
+      "description": null,
+      "price_eur": null,
+      "price": null,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "dolma",
+        "stuffed vegetables"
+      ],
+      "source": "speisekarte_de_menu_2026_04_27",
+      "source_date": "2026-04-27",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "category": "Grill",
+      "name": "Gemischter Al Safa Teller",
+      "english_name": "Gemischter Al Safa Teller",
+      "description": null,
+      "price_eur": 40.0,
+      "price": 40.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "al safa mixed plate",
+        "mixed offal grill"
+      ],
+      "source": "supplied_physical_menu_date_unknown",
+      "source_date": "date_not_stated",
+      "source_confidence": "medium",
+      "source_support": [
+        {
+          "source": "supplied_competitive_intelligence_pdf",
+          "snapshot_date": "2026-09-20",
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "price_conflict_policy": "Conflicting prices remain source-specific and are not silently merged.",
+  "source_completion": {
+    "supporting_document": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+    "supporting_document_snapshot_date": "2026-09-20",
+    "note": "Captured union of the existing 2026-09-21 public snapshot, 24-item dated public listing, and selected physical-menu evidence; conflicts remain item-level."
+  }
+}

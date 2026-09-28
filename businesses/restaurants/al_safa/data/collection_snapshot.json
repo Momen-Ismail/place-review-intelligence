@@ -1,0 +1,16 @@
+{
+  "restaurant": "al_safa",
+  "google_maps_url": "https://www.google.com/maps/place/Al+Safa+Restaurant/@50.6848367,7.1569974,17z/data=!4m8!3m7!1s0x47bee46d93a79a23:0x591d8b3a13468bfd!8m2!3d50.6848367!4d7.1569974!9m1!1b1!16s%2Fg%2F11cn2tr8qd",
+  "collection_started_at": "2026-09-21T20:45:40.342927+00:00",
+  "collection_completed_at": "2026-09-21T21:09:07.642563+00:00",
+  "reviews_collected": 2696,
+  "latest_review_date": "2026-09-21",
+  "earliest_review_date": "2016-05-14",
+  "actor_run": {
+    "actor_id": "compass/google-maps-reviews-scraper",
+    "run_id": "hfMxZvTdU2Jn2aLgZ",
+    "dataset_id": "VsRlBbNjNRSARc3VE",
+    "status": "SUCCEEDED"
+  },
+  "full_history_attempted": true
+}

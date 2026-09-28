@@ -1,0 +1,75 @@
+{
+  "restaurant": "Beit Fayrouz Restaurant",
+  "snapshot_date": "2026-09-21",
+  "sources": [
+    {
+      "source_name": "Beit Fayrouz Lieferando",
+      "source_type": "delivery_platform_menu",
+      "url": "https://www.lieferando.de/speisekarte/beit-fayrouz",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "address",
+        "menu",
+        "current prices",
+        "delivery"
+      ],
+      "confidence": "medium",
+      "authority_level": "medium",
+      "notes": null,
+      "conflicts": [
+        "An older/localized Lieferando crawl showed different prices; German current snapshot dated 2026-09-21 is used for catalog prices and conflict is retained."
+      ]
+    },
+    {
+      "source_name": "Beit Fayrouz Uber Eats",
+      "source_type": "delivery_platform_menu",
+      "url": "https://www.ubereats.com/de/store/beit-fayrouz-restaurant/NglP3wZEUH-5reilsPP94Q?isMatchbox=true",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "address",
+        "menu cross-check",
+        "delivery",
+        "service hours",
+        "platform recommended-item signals",
+        "platform halal category"
+      ],
+      "confidence": "medium",
+      "authority_level": "medium",
+      "notes": "Platform recommendations and platform ratings are stored separately and are never treated as Google sentiment or sales.",
+      "conflicts": [
+        "Several prices differ from Lieferando; Uber values are retained in platform_signals/notes, not silently substituted."
+      ]
+    },
+    {
+      "source_name": "Google Maps target",
+      "source_type": "google_business_maps",
+      "url": "https://www.google.com/maps/place/Beit+Fayrouz+Restaurant/@50.6851301,7.1533365,17z/data=!4m8!3m7!1s0x47bee51e12748a15:0xb6bfc21bcfbce636!8m2!3d50.6851301!4d7.1533365!9m1!1b1!16s%2Fg%2F11nc0xvtdy",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "review collection",
+        "map identity"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Opening announcement listing",
+      "source_type": "reputable_listing",
+      "url": "https://www.neueroeffnung.info/bonn/beit-fayrouz-restaurant",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "address",
+        "opening context",
+        "secondary venue hours"
+      ],
+      "confidence": "low",
+      "authority_level": "low",
+      "notes": null,
+      "conflicts": [
+        "Listing venue hours 12:00-24:00 differ from Uber Eats delivery hours 11:00-23:45."
+      ]
+    }
+  ]
+}

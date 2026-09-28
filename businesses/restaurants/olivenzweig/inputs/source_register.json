@@ -1,0 +1,158 @@
+{
+  "restaurant": "Olivenzweig Restaurant",
+  "snapshot_date": "2026-09-21",
+  "sources": [
+    {
+      "source_name": "Olivenzweig official home",
+      "source_type": "official_restaurant_website",
+      "url": "https://www.olivenzweig-restaurant.de/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "identity",
+        "positioning",
+        "address"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Olivenzweig official menu",
+      "source_type": "official_owned_menu",
+      "url": "https://www.olivenzweig-restaurant.de/unser-menu/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "menu",
+        "prices",
+        "drinks",
+        "opening hours"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": [
+        "Delivery menu has some different item prices; official dine-in menu retained separately."
+      ]
+    },
+    {
+      "source_name": "Olivenzweig official brunch menu",
+      "source_type": "official_owned_menu",
+      "url": "https://www.olivenzweig-restaurant.de/brunch-menu/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "weekend brunch",
+        "prices",
+        "hours"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Olivenzweig official services",
+      "source_type": "official_restaurant_website",
+      "url": "https://www.olivenzweig-restaurant.de/dienstleistungen/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "catering",
+        "events",
+        "corporate lunch"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Olivenzweig official reservations",
+      "source_type": "official_restaurant_website",
+      "url": "https://www.olivenzweig-restaurant.de/reservierungen/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "reservations"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Olivenzweig official contact",
+      "source_type": "official_restaurant_website",
+      "url": "https://www.olivenzweig-restaurant.de/kontakt/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "address",
+        "parking",
+        "opening hours"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": [
+        "Some official page footers say daily while the same site also states Monday is closed; Monday retained as closed with conflict flagged."
+      ]
+    },
+    {
+      "source_name": "Olivenzweig delivery menu",
+      "source_type": "delivery_platform",
+      "url": "https://www.olivenzweigrestaurant-bonn.de/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "delivery availability",
+        "cross-check menu"
+      ],
+      "confidence": "medium",
+      "authority_level": "medium",
+      "notes": null,
+      "conflicts": [
+        "Delivery prices differ from official dine-in menu on some items."
+      ]
+    },
+    {
+      "source_name": "Google Maps target",
+      "source_type": "google_business_maps",
+      "url": "https://www.google.com/maps/place/Olivenzweig+Restaurant/@50.7359368,7.0950361,17z/data=!4m8!3m7!1s0x47bee1801c84e23d:0xd66d4911494975e3!8m2!3d50.7359368!4d7.0950361!9m1!1b1!16s%2Fg%2F11y5vj5vwp",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "review collection",
+        "map identity"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Supplied competitive-intelligence PDF",
+      "source_type": "supplied_research",
+      "url": null,
+      "document_name": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+      "document_sha256": "0bb673506e50bf94a8b48b6f1bbbb7707d5c550e0480fc0723f04f48cbae4bca",
+      "source_snapshot_date": "2026-09-20",
+      "retrieved_at": "2026-09-23",
+      "used_for": [
+        "menu/profile cross-check",
+        "main-menu completeness",
+        "weekend-brunch completeness",
+        "pricing/positioning notes"
+      ],
+      "page_references": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "confidence": "medium",
+      "authority_level": "supporting",
+      "notes": "User-supplied synthesized research; used below current official/owned/Google/current-platform sources.",
+      "conflicts": [
+        "Official-site footer/hour wording conflicts remain governed by the newer official source register."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "restaurant": "olivenzweig",
+  "google_maps_url": "https://www.google.com/maps/place/Olivenzweig+Restaurant/@50.7359368,7.0950361,17z/data=!4m8!3m7!1s0x47bee1801c84e23d:0xd66d4911494975e3!8m2!3d50.7359368!4d7.0950361!9m1!1b1!16s%2Fg%2F11y5vj5vwp",
+  "collection_started_at": "2026-09-21T20:21:48.807578+00:00",
+  "collection_completed_at": "2026-09-21T20:45:22.416138+00:00",
+  "reviews_collected": 718,
+  "latest_review_date": "2026-09-19",
+  "earliest_review_date": "2024-07-11",
+  "actor_run": {
+    "actor_id": "compass/google-maps-reviews-scraper",
+    "run_id": "zP4Ncjh867eebHZWc",
+    "dataset_id": "LpLe0yhPv4qzdAMYK",
+    "status": "SUCCEEDED"
+  },
+  "full_history_attempted": true
+}

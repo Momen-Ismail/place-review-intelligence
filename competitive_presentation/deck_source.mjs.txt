@@ -1,0 +1,1128 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { Presentation, PresentationFile } from "@oai/artifact-tool";
+
+const [dataPath, slidesDir, pptxPath, linkManifestPath, slideListPath, reviewAuditPath] = process.argv.slice(2);
+if (![dataPath, slidesDir, pptxPath, linkManifestPath, slideListPath, reviewAuditPath].every(Boolean)) {
+  throw new Error("Usage: build.mjs DATA_JSON SLIDES_DIR PPTX LINK_MANIFEST SLIDE_LIST REVIEW_AUDIT");
+}
+
+const data = JSON.parse(await fs.readFile(dataPath, "utf8"));
+await fs.mkdir(slidesDir, { recursive: true });
+await fs.mkdir(path.dirname(pptxPath), { recursive: true });
+
+const P = Presentation.create({ slideSize: { width: 1280, height: 720 } });
+const W = 1280;
+const H = 720;
+const C = {
+  navy: "#0B1F33",
+  navy2: "#16334F",
+  gold: "#D4A72C",
+  teal: "#1F9D8A",
+  red: "#D95C59",
+  blue: "#5B8FF9",
+  ink: "#17212B",
+  muted: "#617080",
+  pale: "#F4F1EA",
+  white: "#FFFFFF",
+  line: "#D9DEE5",
+  softBlue: "#EAF1F8",
+  softGold: "#F8F1DC",
+  softTeal: "#E4F3EF",
+  softRed: "#FAE9E7",
+  green: "#2E7D63",
+  amber: "#A56B00",
+};
+const SLUGS = data.display_order;
+const NAMES = data.display_names;
+const COLORS = { al_assiel: C.gold, olivenzweig: C.teal, al_safa: C.red, beit_fayrouz: C.blue };
+const SHORT = { al_assiel: "Al Assiel", olivenzweig: "Olivenzweig", al_safa: "Al Safa", beit_fayrouz: "Beit Fayrouz" };
+const slideMeta = [];
+const linkManifest = [];
+const reviewLinkAudit = [];
+const targetPages = {};
+
+function writeText(slide, text, pos, opts = {}) {
+  const shape = slide.shapes.add({
+    geometry: "textbox",
+    position: pos,
+    fill: "none",
+    line: { style: "solid", fill: "none", width: 0 },
+  });
+  shape.text = String(text ?? "");
+  shape.text.style = {
+    fontSize: opts.size ?? 18,
+    bold: opts.bold ?? false,
+    color: opts.color ?? C.ink,
+    alignment: opts.align ?? "left",
+    verticalAlignment: opts.valign ?? "top",
+    autoFit: opts.autoFit ?? "shrinkText",
+    wrap: "square",
+    insets: opts.insets ?? { top: 2, right: 4, bottom: 2, left: 4 },
+    typeface: "Aptos",
+    lineSpacing: opts.lineSpacing ?? 1.05,
+  };
+  return shape;
+}
+
+function rect(slide, pos, fill, line = "none", radius = false) {
+  return slide.shapes.add({
+    geometry: radius ? "roundRect" : "rect",
+    position: pos,
+    fill,
+    line: { style: "solid", fill: line, width: line === "none" ? 0 : 1 },
+    ...(radius ? { borderRadius: "rounded-xl" } : {}),
+  });
+}
+
+function line(slide, x1, y1, x2, y2, color = C.line, width = 1) {
+  return slide.shapes.add({
+    geometry: "line",
+    position: { left: x1, top: y1, width: x2 - x1, height: y2 - y1 },
+    fill: "none",
+    line: { style: "solid", fill: color, width },
+  });
+}
+
+function chartSegment(slide, x1, y1, x2, y2, color, width = 3) {
+  return slide.shapes.add({
+    geometry: y2 < y1 ? "lineInv" : "line",
+    position: { left: x1, top: Math.min(y1, y2), width: x2 - x1, height: Math.abs(y2 - y1) },
+    fill: "none",
+    line: { style: "solid", fill: color, width },
+  });
+}
+
+function baseSlide(title, chapter, subtitle = "", opts = {}) {
+  const slide = P.slides.add();
+  slide.background.fill = opts.dark ? C.navy : C.pale;
+  const page = P.slides.items.length;
+  slideMeta.push({ page, title, chapter, kind: opts.kind ?? "main", appendix: opts.appendix ?? null });
+  if (opts.targetKey) targetPages[opts.targetKey] = page;
+  if (!opts.noHeader) {
+    writeText(slide, chapter.toUpperCase(), { left: 64, top: 30, width: 680, height: 24 }, {
+      size: 14, bold: true, color: opts.dark ? C.gold : C.teal,
+    });
+    writeText(slide, title, { left: 64, top: 58, width: 1110, height: 58 }, {
+      size: 38, bold: true, color: opts.dark ? C.white : C.navy,
+    });
+    if (subtitle) {
+      writeText(slide, subtitle, { left: 66, top: 114, width: 1100, height: 38 }, {
+        size: 18, color: opts.dark ? "#CBD7E4" : C.muted,
+      });
+    }
+    line(slide, 64, 154, 1216, 154, opts.dark ? C.navy2 : C.line, 1);
+  }
+  writeText(slide, String(page).padStart(2, "0"), { left: 1184, top: 680, width: 40, height: 20 }, {
+    size: 12, bold: true, color: opts.dark ? "#91A4B6" : C.muted, align: "right",
+  });
+  return slide;
+}
+
+function addLink(slide, label, pos, targetKey = null, targetPage = null, url = null, back = false, metadata = {}) {
+  writeText(slide, label, pos, {
+    size: 15, bold: true, color: back ? C.teal : C.navy, align: back ? "left" : "right", valign: "middle",
+  });
+  linkManifest.push({ page: P.slides.items.length, rect: pos, targetKey, targetPage, url, label, ...metadata });
+}
+
+function topicTrendValue(row, metric = "positive_share_pct") {
+  return row && row.mentions > 0 && row[metric] != null ? row[metric] : null;
+}
+
+function lowScoreNegativeCount(slug, topicName) {
+  const row = data.restaurants[slug].low_score.top_negative_topics.find(x => x.topic === topicName);
+  return row?.negative_reviews ?? 0;
+}
+
+function evidenceLink(slide, targetKey, label = "View evidence →") {
+  addLink(slide, label, { left: 970, top: 656, width: 240, height: 26 }, targetKey);
+}
+
+function backLink(slide, targetPage) {
+  addLink(slide, "← Back to source slide", { left: 66, top: 656, width: 260, height: 26 }, null, targetPage, null, true);
+}
+
+function markerLegend(slide, top = 166) {
+  let x = 66;
+  for (const slug of SLUGS) {
+    rect(slide, { left: x, top: top + 4, width: 12, height: 12 }, COLORS[slug]);
+    writeText(slide, SHORT[slug], { left: x + 17, top, width: 150, height: 22 }, { size: 14, bold: true, color: C.muted });
+    x += 205;
+  }
+}
+
+function card(slide, pos, title, value, note = "", accent = C.teal, opts = {}) {
+  rect(slide, pos, C.white, C.line, true);
+  rect(slide, { left: pos.left, top: pos.top, width: 7, height: pos.height }, accent);
+  writeText(slide, title, { left: pos.left + 22, top: pos.top + 18, width: pos.width - 40, height: 26 }, {
+    size: opts.titleSize ?? 16, bold: true, color: C.muted,
+  });
+  writeText(slide, value, { left: pos.left + 22, top: pos.top + 49, width: pos.width - 40, height: opts.valueHeight ?? 56 }, {
+    size: opts.valueSize ?? 34, bold: true, color: opts.valueColor ?? C.navy,
+  });
+  if (note) writeText(slide, note, { left: pos.left + 22, top: pos.top + pos.height - 42, width: pos.width - 40, height: 28 }, {
+    size: 14, color: C.muted,
+  });
+}
+
+function noteBox(slide, text, pos, tone = "teal") {
+  const fill = tone === "red" ? C.softRed : tone === "gold" ? C.softGold : tone === "blue" ? C.softBlue : C.softTeal;
+  const accent = tone === "red" ? C.red : tone === "gold" ? C.gold : tone === "blue" ? C.blue : C.teal;
+  rect(slide, pos, fill, "none", true);
+  rect(slide, { left: pos.left, top: pos.top, width: 6, height: pos.height }, accent);
+  writeText(slide, text, { left: pos.left + 18, top: pos.top + 12, width: pos.width - 32, height: pos.height - 22 }, {
+    size: 17, color: C.ink, valign: "middle",
+  });
+}
+
+function addTable(slide, rows, columns, pos, opts = {}) {
+  const headerH = opts.headerH ?? 42;
+  const rowH = opts.rowH ?? 42;
+  const widths = columns.map(c => c.width);
+  let x = pos.left;
+  columns.forEach((col, i) => {
+    rect(slide, { left: x, top: pos.top, width: widths[i], height: headerH }, C.navy);
+    writeText(slide, col.label, { left: x + 6, top: pos.top + 7, width: widths[i] - 12, height: headerH - 12 }, {
+      size: opts.headerSize ?? 15, bold: true, color: C.white, align: col.align ?? "left", valign: "middle",
+    });
+    x += widths[i];
+  });
+  rows.forEach((row, ri) => {
+    const y = pos.top + headerH + ri * rowH;
+    x = pos.left;
+    columns.forEach((col, ci) => {
+      rect(slide, { left: x, top: y, width: widths[ci], height: rowH }, ri % 2 ? "#F8FAFC" : C.white, C.line);
+      const value = typeof col.value === "function" ? col.value(row) : row[col.key];
+      writeText(slide, value ?? "—", { left: x + 6, top: y + 5, width: widths[ci] - 12, height: rowH - 9 }, {
+        size: opts.bodySize ?? 16, bold: col.bold ?? false, color: col.color ? col.color(row) : C.ink,
+        align: col.align ?? "left", valign: "middle",
+      });
+      x += widths[ci];
+    });
+  });
+}
+
+function addBar(slide, categories, series, pos, opts = {}) {
+  slide.charts.add("bar", {
+    position: pos,
+    categories,
+    series,
+    barOptions: { direction: opts.direction ?? "column", grouping: opts.grouping ?? "clustered", gapWidth: 36 },
+    hasLegend: series.length > 1,
+    legend: { position: "bottom", overlay: false, textStyle: { fill: C.muted, fontSize: 14 } },
+    xAxis: { textStyle: { fill: C.muted, fontSize: 14 }, majorGridlines: null },
+    yAxis: {
+      min: opts.min, max: opts.max, numberFormatCode: opts.numberFormatCode,
+      textStyle: { fill: C.muted, fontSize: 13 },
+      majorGridlines: { style: "solid", fill: C.line, width: 1 },
+    },
+    dataLabels: opts.labels === false ? undefined : {
+      showValue: true, position: opts.direction === "bar" ? "outEnd" : "outEnd",
+      textStyle: { fill: C.ink, fontSize: 13, bold: true },
+    },
+  });
+}
+
+function addLine(slide, categories, series, pos, opts = {}) {
+  slide.charts.add("line", {
+    position: pos,
+    categories,
+    series,
+    legend: { position: "bottom", overlay: false, textStyle: { fill: C.muted, fontSize: 14 } },
+    yAxis: {
+      min: opts.min, max: opts.max, numberFormatCode: opts.numberFormatCode,
+      textStyle: { fill: C.muted, fontSize: 13 },
+      majorGridlines: { style: "solid", fill: C.line, width: 1 },
+    },
+    xAxis: { textStyle: { fill: C.muted, fontSize: 13 }, majorGridlines: null },
+  });
+}
+
+function addGapLineChart(slide, categories, series, pos, opts = {}) {
+  const min = opts.min ?? 0;
+  const max = opts.max ?? 100;
+  const plot = { left: pos.left + 40, top: pos.top + 8, width: pos.width - 50, height: pos.height - 82 };
+  for (let tick = min; tick <= max; tick += 20) {
+    const y = plot.top + plot.height - ((tick - min) / (max - min)) * plot.height;
+    line(slide, plot.left, y, plot.left + plot.width, y, C.line, 1);
+    writeText(slide, tick, { left: pos.left, top: y - 10, width: 34, height: 20 }, { size: 12, color: C.muted, align: "right" });
+  }
+  categories.forEach((category, index) => {
+    const x = plot.left + (index / Math.max(1, categories.length - 1)) * plot.width;
+    writeText(slide, category, { left: x - 28, top: plot.top + plot.height + 8, width: 56, height: 20 }, { size: 12, color: C.muted, align: "center" });
+  });
+  series.forEach(item => {
+    const color = item.line?.fill ?? C.blue;
+    const points = item.values.map((value, index) => {
+      if (value == null || !Number.isFinite(Number(value))) return null;
+      return {
+        x: plot.left + (index / Math.max(1, categories.length - 1)) * plot.width,
+        y: plot.top + plot.height - ((Number(value) - min) / (max - min)) * plot.height,
+      };
+    });
+    for (let index = 1; index < points.length; index += 1) {
+      if (points[index - 1] && points[index]) {
+        chartSegment(slide, points[index - 1].x, points[index - 1].y, points[index].x, points[index].y, color, 3);
+      }
+    }
+    points.filter(Boolean).forEach(point => rect(slide, { left: point.x - 3, top: point.y - 3, width: 6, height: 6 }, color, "none", true));
+  });
+  series.forEach((item, index) => {
+    const cellW = plot.width / series.length;
+    const left = plot.left + index * cellW;
+    rect(slide, { left, top: pos.top + pos.height - 25, width: 12, height: 4 }, item.line?.fill ?? C.blue);
+    writeText(slide, item.name, { left: left + 17, top: pos.top + pos.height - 34, width: cellW - 18, height: 22 }, { size: 12, color: C.muted });
+  });
+}
+
+function ev(count) { return count >= 15 ? "high" : count >= 5 ? "medium" : count >= 1 ? "low" : "none"; }
+function fmt(value, digits = 1) { return value == null ? "—" : Number(value).toFixed(digits); }
+function pct(value, digits = 1) { return value == null ? "—" : `${Number(value).toFixed(digits)}%`; }
+function euro(value) { return value == null ? "—" : `€${Number(value).toFixed(2)}`; }
+function clip(text, n = 100) { const s = String(text ?? "").replace(/\s+/g, " ").trim(); return s.length > n ? `${s.slice(0, n - 1)}…` : s; }
+function topic(slug, period, name) { return data.restaurants[slug][period][name] ?? {}; }
+function period(slug, key) { return data.restaurants[slug].periods[key]; }
+
+// 1 — Title
+{
+  const s = baseSlide("", "", "", { dark: true, noHeader: true });
+  rect(s, { left: 0, top: 0, width: W, height: H }, C.navy);
+  rect(s, { left: 0, top: 0, width: 24, height: H }, C.gold);
+  writeText(s, "COMPETITIVE INTELLIGENCE", { left: 82, top: 74, width: 590, height: 30 }, { size: 17, bold: true, color: C.gold });
+  writeText(s, "Al Assiel\nCompetitive Intelligence", { left: 78, top: 148, width: 680, height: 180 }, { size: 58, bold: true, color: C.white, lineSpacing: 0.95 });
+  writeText(s, "Observed review performance • menu structure • field-research agenda", { left: 84, top: 348, width: 690, height: 54 }, { size: 24, color: "#C8D5E2" });
+  const labels = ["AL ASSIEL", "OLIVENZWEIG", "AL SAFA", "BEIT FAYROUZ"];
+  labels.forEach((label, i) => {
+    const slug = SLUGS[i];
+    rect(s, { left: 810, top: 116 + i * 104, width: 330, height: 72 }, "#102B46", COLORS[slug], true);
+    rect(s, { left: 832, top: 140 + i * 104, width: 18, height: 18 }, COLORS[slug]);
+    writeText(s, label, { left: 868, top: 130 + i * 104, width: 230, height: 38 }, { size: 22, bold: true, color: C.white, valign: "middle" });
+  });
+  writeText(s, "Common cutoff: 03 Sep 2026  |  Recent 90 days: 06 Jun–03 Sep 2026", { left: 84, top: 612, width: 940, height: 30 }, { size: 17, color: "#9EB1C3" });
+}
+
+// 2 — Scope
+{
+  const s = baseSlide("What is compared—and what is not?", "Chapter 1 — Executive Competitive Overview",
+    "One cutoff, four formal restaurants, and an observed-evidence standard.");
+  const items = [
+    ["Formal set", "Al Assiel · Olivenzweig · Al Safa · Beit Fayrouz"],
+    ["Common cutoff", "03 Sep 2026; post-cutoff competitor reviews excluded from formal comparisons"],
+    ["Core window", "Recent 90 days: 06 Jun–03 Sep 2026"],
+    ["Evidence rule", "Counts, shares, sample sizes and low / medium / high evidence shown together"],
+    ["Interpretation", "Observed comparison—not proof that one restaurant is universally better"],
+    ["Excluded", "Aleppo Rose remains outside the formal benchmark"],
+  ];
+  items.forEach((item, i) => {
+    const y = 184 + i * 68;
+    writeText(s, item[0], { left: 70, top: y, width: 220, height: 32 }, { size: 19, bold: true, color: C.navy });
+    writeText(s, item[1], { left: 300, top: y, width: 840, height: 40 }, { size: 18, color: C.ink });
+    line(s, 70, y + 48, 1160, y + 48, C.line);
+  });
+  evidenceLink(s, "A");
+  addLink(s, "Source details →", { left: 700, top: 656, width: 230, height: 26 }, "P");
+}
+
+// 3 — Executive signals
+{
+  const s = baseSlide("The recent market signal is uneven—not a single ranking", "Chapter 1 — Executive Competitive Overview",
+    "During the common recent 90-day period, Al Assiel has the weakest rating and the highest low-score share in the formal set.");
+  card(s, { left: 66, top: 188, width: 270, height: 170 }, "Al Assiel", "3.68 / 32.1%", "rating / low-score share · n=28", C.gold);
+  card(s, { left: 356, top: 188, width: 270, height: 170 }, "Olivenzweig", "4.35 / 13.5%", "rating / low-score share · n=52", C.teal);
+  card(s, { left: 646, top: 188, width: 270, height: 170 }, "Al Safa", "4.30 / 12.8%", "rating / low-score share · n=78", C.red);
+  card(s, { left: 936, top: 188, width: 270, height: 170 }, "Beit Fayrouz", "4.86 / 0.0%", "n=14 · medium evidence", C.blue);
+  noteBox(s, "Management implication: treat Beit Fayrouz’s high observed rating cautiously because its recent sample is smaller. Al Assiel’s 9 low-score reviews in 90 days are a repeated signal, not a one-off.", { left: 66, top: 400, width: 1140, height: 104 }, "gold");
+  writeText(s, "The market’s owner-response behavior is also weak: all four recorded 0% responses in the common recent-90-day window.", { left: 72, top: 534, width: 1110, height: 50 }, { size: 21, bold: true, color: C.navy });
+  evidenceLink(s, "C");
+}
+
+// 4 — Leaders
+{
+  const s = baseSlide("Where does the observed evidence point to a leader?", "Chapter 1 — Executive Competitive Overview",
+    "Only qualified samples are labelled; ties and insufficient evidence remain explicit.");
+  const L = data.observed_leaders;
+  const rows = [
+    ["Recent rating", L.highest_observed_recent_rating.leader, fmt(L.highest_observed_recent_rating.value, 2), `n=${L.highest_observed_recent_rating.sample_size}`],
+    ["Recent review volume", L.highest_review_volume.leader, String(L.highest_review_volume.value), "90-day reviews"],
+    ["Lowest low-score share", L.lowest_observed_negative_share.leader, pct(L.lowest_observed_negative_share.value), `n=${L.lowest_observed_negative_share.sample_size}`],
+    ["Food positive sentiment", L.strongest_observed_food_sentiment.leader, pct(L.strongest_observed_food_sentiment.value), `mentions=${L.strongest_observed_food_sentiment.mentions}`],
+    ["Service positive sentiment", L.strongest_observed_service_sentiment.leader, pct(L.strongest_observed_service_sentiment.value), `mentions=${L.strongest_observed_service_sentiment.mentions}`],
+    ["Owner response rate", null, "No unique leader", "0% for all four in recent 90d"],
+  ].map(r => ({ metric: r[0], restaurant: r[1] ? SHORT[r[1]] : "—", value: r[2], evidence: r[3] }));
+  addTable(s, rows, [
+    { label: "Observed measure", key: "metric", width: 360, bold: true },
+    { label: "Qualified leader", key: "restaurant", width: 270 },
+    { label: "Value", key: "value", width: 220, align: "right" },
+    { label: "Evidence", key: "evidence", width: 300 },
+  ], { left: 66, top: 188, width: 1150, height: 420 }, { rowH: 60, bodySize: 17 });
+  evidenceLink(s, "R");
+}
+
+// 5 — 90d scorecard
+{
+  const s = baseSlide("Recent 90-day benchmark", "Chapter 2 — Recent 90-Day Benchmark",
+    "06 Jun–03 Sep 2026 · common boundaries for every restaurant");
+  const rows = SLUGS.map(slug => {
+    const p = period(slug, "recent_90d");
+    return { restaurant: SHORT[slug], n: p.review_count, week: fmt(p.reviews_per_week, 1), rating: fmt(p.average_rating, 2), five: pct(p.five_star_share_pct), low: pct(p.low_score_share_pct), written: p.written_reviews, response: pct(p.owner_response_rate_pct), evidence: p.evidence_level };
+  });
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 205, bold: true },
+    { label: "n", key: "n", width: 80, align: "right" },
+    { label: "/ week", key: "week", width: 110, align: "right" },
+    { label: "Rating", key: "rating", width: 110, align: "right" },
+    { label: "5-star", key: "five", width: 125, align: "right" },
+    { label: "1–2 star", key: "low", width: 125, align: "right" },
+    { label: "Written", key: "written", width: 105, align: "right" },
+    { label: "Response", key: "response", width: 135, align: "right" },
+    { label: "Evidence", key: "evidence", width: 120 },
+  ], { left: 42, top: 202, width: 1190, height: 320 }, { rowH: 64, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Read the rating together with n and the low-score share. Beit Fayrouz: n=14 (medium); the other three recent samples are high evidence.", { left: 66, top: 518, width: 1140, height: 84 }, "blue");
+  evidenceLink(s, "C");
+}
+
+// 6 — Recent rating
+{
+  const s = baseSlide("Observed rating: Al Assiel trails the recent field", "Chapter 2 — Recent 90-Day Benchmark",
+    "Average Google review rating · 06 Jun–03 Sep 2026");
+  markerLegend(s, 166);
+  addBar(s, SLUGS.map(x => SHORT[x]), [{ name: "Average rating", values: SLUGS.map(x => period(x, "recent_90d").average_rating), fill: C.navy2 }],
+    { left: 110, top: 214, width: 1010, height: 360 }, { min: 0, max: 5 });
+  noteBox(s, "Al Assiel: 3.68 from 28 reviews. Beit Fayrouz’s 4.86 is based on only 14 reviews and needs caution.", { left: 120, top: 572, width: 990, height: 58 }, "gold");
+  evidenceLink(s, "C");
+}
+
+// 7 — Volume/cadence
+{
+  const s = baseSlide("Al Safa has the strongest recent review cadence", "Chapter 2 — Recent 90-Day Benchmark",
+    "Review volume and reviews per week · 06 Jun–03 Sep 2026");
+  addBar(s, SLUGS.map(x => SHORT[x]), [
+    { name: "Review count", values: SLUGS.map(x => period(x, "recent_90d").review_count), fill: C.navy2 },
+  ], { left: 66, top: 196, width: 610, height: 390 }, { min: 0 });
+  addBar(s, SLUGS.map(x => SHORT[x]), [
+    { name: "Reviews / week", values: SLUGS.map(x => period(x, "recent_90d").reviews_per_week), fill: C.teal },
+  ], { left: 704, top: 196, width: 510, height: 390 }, { min: 0 });
+  writeText(s, "78 reviews · 6.1/week", { left: 850, top: 570, width: 300, height: 32 }, { size: 21, bold: true, color: C.red, align: "center" });
+  evidenceLink(s, "C");
+}
+
+// 8 — Shares
+{
+  const s = baseSlide("The risk is concentrated in Al Assiel’s low-score share", "Chapter 2 — Recent 90-Day Benchmark",
+    "5-star and 1–2-star shares · counts are shown in the labels below");
+  addBar(s, SLUGS.map(x => SHORT[x]), [
+    { name: "5-star share", values: SLUGS.map(x => period(x, "recent_90d").five_star_share_pct), fill: C.teal },
+    { name: "1–2-star share", values: SLUGS.map(x => period(x, "recent_90d").low_score_share_pct), fill: C.red },
+  ], { left: 94, top: 202, width: 1080, height: 350 }, { min: 0, max: 100, numberFormatCode: "0\\%" });
+  const labels = SLUGS.map(slug => `${SHORT[slug]}: ${period(slug, "recent_90d").five_star_count} five-star / ${period(slug, "recent_90d").low_score_count} low-score`);
+  writeText(s, labels.join("   •   "), { left: 70, top: 570, width: 1135, height: 54 }, { size: 16, bold: true, color: C.navy, align: "center" });
+  evidenceLink(s, "C");
+}
+
+// 9 — Changes
+{
+  const s = baseSlide("Recent ratings diverge from prior baselines", "Chapter 2 — Recent 90-Day Benchmark",
+    "Recent 90-day rating compared with previous 90 days and historical reviews through 07 Mar 2026");
+  addBar(s, SLUGS.map(x => SHORT[x]), [
+    { name: "Historical", values: SLUGS.map(x => period(x, "historical").average_rating ?? null), fill: "#AAB6C2" },
+    { name: "Previous 90d", values: SLUGS.map(x => period(x, "previous_90d").average_rating), fill: C.blue },
+    { name: "Recent 90d", values: SLUGS.map(x => period(x, "recent_90d").average_rating), fill: C.navy2 },
+  ], { left: 80, top: 198, width: 1110, height: 390 }, { min: 0, max: 5 });
+  noteBox(s, "Al Assiel: 3.91 → 3.68. Al Safa: 4.79 → 4.30. Olivenzweig improved to 4.35. Beit Fayrouz has no historical baseline.", { left: 84, top: 574, width: 1100, height: 64 }, "blue");
+  evidenceLink(s, "E");
+}
+
+// 10 — Latest 30
+{
+  const s = baseSlide("Latest 30 days: Al Assiel improves slightly, but remains exposed", "Chapter 3 — Latest 30-Day Movement",
+    "05 Aug–03 Sep 2026 compared with 06 Jul–04 Aug 2026");
+  const rows = SLUGS.map(slug => {
+    const a = period(slug, "latest_30d"), b = period(slug, "previous_30d");
+    return { restaurant: SHORT[slug], n: a.review_count, rating: fmt(a.average_rating, 2), delta: `${a.average_rating >= b.average_rating ? "+" : ""}${fmt(a.average_rating - b.average_rating, 2)}`, five: pct(a.five_star_share_pct), low: `${pct(a.low_score_share_pct)} (${a.low_score_count})`, response: pct(a.owner_response_rate_pct), evidence: a.evidence_level };
+  });
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 235, bold: true },
+    { label: "n", key: "n", width: 80, align: "right" },
+    { label: "Rating", key: "rating", width: 120, align: "right" },
+    { label: "Δ prior 30d", key: "delta", width: 150, align: "right" },
+    { label: "5-star", key: "five", width: 140, align: "right" },
+    { label: "1–2 star", key: "low", width: 170, align: "right" },
+    { label: "Response", key: "response", width: 140, align: "right" },
+    { label: "Evidence", key: "evidence", width: 125 },
+  ], { left: 60, top: 202, width: 1160, height: 310 }, { rowH: 62, bodySize: 16 });
+  noteBox(s, "Beit Fayrouz latest 30d: n=4, low evidence. Do not treat 5.00 as a strong comparative conclusion.", { left: 66, top: 518, width: 1140, height: 78 }, "gold");
+  evidenceLink(s, "D");
+}
+
+// 11 — Latest topics
+{
+  const s = baseSlide("Latest 30-day topics: the written sample is thin", "Chapter 3 — Latest 30-Day Movement",
+    "Positive / negative counts for Food, Service, Taste and Price & Value; interpret counts before percentages");
+  const rows = [];
+  for (const slug of SLUGS) {
+    for (const t of ["Food", "Service", "Taste", "Price & Value"]) {
+      const x = topic(slug, "latest_30d_topics", t);
+      rows.push({ restaurant: SHORT[slug], topic: t, mentions: x.count ?? 0, pos: x.positive_count ?? 0, neg: x.negative_count ?? 0, ev: x.evidence_level ?? "none" });
+    }
+  }
+  const focus = rows.filter(r => r.mentions > 0).sort((a,b) => b.neg - a.neg || b.mentions - a.mentions).slice(0,8);
+  addTable(s, focus, [
+    { label: "Restaurant", key: "restaurant", width: 220, bold: true },
+    { label: "Topic", key: "topic", width: 245 },
+    { label: "Mentions", key: "mentions", width: 150, align: "right" },
+    { label: "Positive", key: "pos", width: 150, align: "right" },
+    { label: "Negative", key: "neg", width: 150, align: "right" },
+    { label: "Evidence", key: "ev", width: 180 },
+  ], { left: 100, top: 190, width: 1080, height: 404 }, { rowH: 44, bodySize: 16 });
+  noteBox(s, "Beit Fayrouz: 4 reviews / 2 written reviews in the common 30-day window; topic evidence is too small for this table.", { left: 100, top: 592, width: 1080, height: 50 }, "blue");
+  evidenceLink(s, "D");
+}
+
+// 12 — Monthly rating
+{
+  const s = baseSlide("Monthly rating trend", "Chapter 4 — Rating & Review-Volume Trends",
+    "Apr–Aug 2026 complete months; the partial September rating is excluded because one restaurant has no pre-cutoff reviews");
+  const months = ["2026-04","2026-05","2026-06","2026-07","2026-08"];
+  const series = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].monthly.slice(3,8).map(x => x.average_rating), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addLine(s, months, series, { left: 70, top: 190, width: 1140, height: 420 }, { min: 0, max: 5 });
+  writeText(s, "September partial-month evidence remains in Appendix E; no missing rating is plotted as zero.", { left: 78, top: 612, width: 720, height: 24 }, { size: 16, color: C.muted });
+  evidenceLink(s, "E");
+}
+
+// 13 — Monthly volume
+{
+  const s = baseSlide("Monthly review volume shows very different market visibility", "Chapter 4 — Rating & Review-Volume Trends",
+    "Apr–03 Sep 2026 · September partial");
+  const months = ["Apr","May","Jun","Jul","Aug","Sep*"];
+  const series = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].monthly.slice(3).map(x => x.review_count), fill: COLORS[slug] }));
+  addBar(s, months, series, { left: 72, top: 190, width: 1135, height: 420 }, { min: 0, labels: false });
+  writeText(s, "* September through 03 Sep. Volume is attention, not customer satisfaction.", { left: 78, top: 612, width: 680, height: 24 }, { size: 15, color: C.muted });
+  evidenceLink(s, "E");
+}
+
+// 14 — monthly low score
+{
+  const s = baseSlide("Monthly low-score share isolates recent risk", "Chapter 4 — Rating & Review-Volume Trends",
+    "1–2-star share by month · Apr–03 Sep 2026");
+  const months = ["Apr","May","Jun","Jul","Aug","Sep*"];
+  const series = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].monthly.slice(3).map(x => x.low_score_share_pct ?? 0), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addLine(s, months, series, { left: 72, top: 190, width: 1135, height: 420 }, { min: 0, max: 50 });
+  noteBox(s, "September is partial; use the 90-day view.", { left: 755, top: 585, width: 430, height: 56 }, "gold");
+  evidenceLink(s, "E");
+}
+
+// 15 — response trend
+{
+  const s = baseSlide("Owner-response activity disappears in the recent window", "Chapter 5 — Owner Response & Reputation Management",
+    "Monthly owner-response rate · Apr–03 Sep 2026");
+  const months = ["Apr","May","Jun","Jul","Aug","Sep*"];
+  const series = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].monthly.slice(3).map(x => x.owner_response_rate_pct ?? 0), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addLine(s, months, series, { left: 72, top: 190, width: 1135, height: 390 }, { min: 0, max: 30 });
+  noteBox(s, "All four: 0 owner responses in the common recent 90-day period. The weakness is market-wide in this dataset; it still leaves Al Assiel’s 9 recent low-score reviews unanswered.", { left: 90, top: 572, width: 1100, height: 70 }, "red");
+  evidenceLink(s, "C");
+}
+
+// 16 — owner response benchmark
+{
+  const s = baseSlide("Is Al Assiel uniquely weak at response management?", "Chapter 5 — Owner Response & Reputation Management",
+    "No—the recent weakness is shared, but historical behavior differs.");
+  const rows = SLUGS.map(slug => {
+    const x = data.owner_response_benchmark[slug];
+    const recent = x.recent_90d_common_window;
+    const low = data.restaurants[slug].low_score;
+    const delay = data.restaurants[slug].owner_response_full.response_delay.median_response_delay_days;
+    return { restaurant: SHORT[slug], recent: `${recent.owner_responses}/${recent.review_count} · ${pct(recent.owner_response_rate_pct)}`, bad: `${low.owner_response_count}/${low.low_score_reviews} · ${pct(low.owner_response_rate_pct)}`, unanswered: low.low_score_reviews - low.owner_response_count, overall: pct(x.overall_from_layer_05.owner_response_rate_pct), delay: delay == null ? "—" : `${fmt(delay,1)}d` };
+  });
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 200, bold: true },
+    { label: "Recent 90d", key: "recent", width: 195 },
+    { label: "All low-score", key: "bad", width: 195 },
+    { label: "Unanswered", key: "unanswered", width: 170, align: "right" },
+    { label: "Overall rate", key: "overall", width: 165, align: "right" },
+    { label: "Median delay", key: "delay", width: 155, align: "right" },
+  ], { left: 50, top: 206, width: 1180, height: 320 }, { rowH: 64, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Actionable gap: respond to low-score reviews consistently. This is reputation hygiene, not a claim that replies change ratings.", { left: 66, top: 526, width: 1140, height: 78 }, "teal");
+  evidenceLink(s, "C");
+}
+
+// 17 — causes bad reviews chart
+{
+  const s = baseSlide("What causes bad reviews?", "Chapter 6 — Bad Reviews / Low-Score Comparison",
+    "Negative-topic counts across all written 1–2-star reviews through 03 Sep 2026");
+  const topics = ["Food","Service","Taste","Price & Value","Waiting Time","Drinks"];
+  const series = SLUGS.map(slug => {
+    const map = Object.fromEntries(data.restaurants[slug].low_score.top_negative_topics.map(x => [x.topic, x.negative_reviews]));
+    return { name: SHORT[slug], values: topics.map(t => map[t] ?? 0), fill: COLORS[slug] };
+  });
+  addBar(s, topics, series, { left: 58, top: 190, width: 1160, height: 420 }, { min: 0, labels: false });
+  writeText(s, "Counts—not percentages—are plotted. Denominators: Al Assiel 24, Olivenzweig 27, Al Safa 26, Beit Fayrouz 0 written low-score reviews.", { left: 70, top: 612, width: 1100, height: 30 }, { size: 15, color: C.muted, align: "center" });
+  evidenceLink(s, "F");
+}
+
+function lowScoreSlide(slug, num, insight) {
+  const x = data.restaurants[slug].low_score;
+  const s = baseSlide(`${SHORT[slug]}: bad-review pattern`, `Chapter 6 — Bad Reviews / Low-Score Comparison`,
+    `${x.one_star_reviews} one-star · ${x.two_star_reviews} two-star · ${x.written_low_score_reviews} written · response ${pct(x.owner_response_rate_pct)}`);
+  const rows = x.top_negative_topics.slice(0,6).map(r => ({ topic: r.topic, count: r.negative_reviews, share: pct(r.share_of_written_low_score_reviews_pct), evidence: r.evidence_level }));
+  addTable(s, rows, [
+    { label: "Negative topic", key: "topic", width: 350, bold: true },
+    { label: "Reviews", key: "count", width: 180, align: "right" },
+    { label: "Share of written", key: "share", width: 260, align: "right" },
+    { label: "Evidence", key: "evidence", width: 220 },
+  ], { left: 80, top: 190, width: 1010, height: 330 }, { rowH: 48, bodySize: 17 });
+  noteBox(s, insight, { left: 80, top: 530, width: 1010, height: 84 }, slug === "al_assiel" ? "gold" : slug === "olivenzweig" ? "teal" : slug === "al_safa" ? "red" : "blue");
+  evidenceLink(s, "F", "Review cases →");
+}
+lowScoreSlide("al_assiel", 18, "Repeated concentrations: Food 10/24, Service 9/24, Food Quality 6/24 and Taste 6/24. Eight written low-score cases mention a detected dish; 1 of 30 low-score reviews received an owner response.");
+lowScoreSlide("olivenzweig", 19, "The clearest concentration is Waiting Time: 13/27 written low-score reviews, alongside Service 12/27. Food appears in 9/27; dish involvement is lower at 3/27.");
+lowScoreSlide("al_safa", 20, "Service leads at 9/26; Food, Food Quality, Price & Value and Staff Friendliness each appear negatively in 6/26. Card-payment complaints are captured in 3 cases.");
+
+// 21 — Beit caution
+{
+  const s = baseSlide("Beit Fayrouz has no written 1–2-star evidence", "Chapter 6 — Bad Reviews / Low-Score Comparison",
+    "Zero observed low-score reviews through the common cutoff is favorable—but not proof of zero operational problems.");
+  card(s, { left: 110, top: 210, width: 310, height: 190 }, "1–2-star reviews", "0", "through 03 Sep 2026", C.blue, { valueSize: 58 });
+  card(s, { left: 485, top: 210, width: 310, height: 190 }, "Recent 90d sample", "14", "medium evidence", C.blue, { valueSize: 58 });
+  card(s, { left: 860, top: 210, width: 310, height: 190 }, "Written recent reviews", "6", "topic evidence remains limited", C.blue, { valueSize: 58 });
+  noteBox(s, "Management reading: retain the favorable observed signal, but validate through structured visits and a larger future sample before treating it as a stable benchmark.", { left: 110, top: 454, width: 1060, height: 112 }, "blue");
+  evidenceLink(s, "F");
+}
+
+// 22 — common/concentrated
+{
+  const s = baseSlide("Common market problems vs restaurant-specific concentrations", "Chapter 6 — Bad Reviews / Low-Score Comparison",
+    "Topic presence inside a written low-score review is not automatically negative sentiment.");
+  const common = data.low_score_comparison.common_market_issues.slice(0,4).map(x => typeof x === "string" ? x : `${x.topic}: ${x.note ?? "recurs across restaurants"}`);
+  const concentrated = data.low_score_comparison.especially_concentrated.slice(0,6).map(x => {
+    if (typeof x === "string") return x;
+    const negative = lowScoreNegativeCount(x.restaurant, x.topic);
+    return `${SHORT[x.restaurant] ?? x.restaurant} — ${x.topic}\n${x.count} mentions | ${negative} negative`;
+  });
+  rect(s, { left: 66, top: 194, width: 545, height: 380 }, C.white, C.line, true);
+  writeText(s, "COMMON MARKET ISSUES", { left: 94, top: 220, width: 470, height: 34 }, { size: 21, bold: true, color: C.teal });
+  writeText(s, common.map(x => `• ${x}`).join("\n\n"), { left: 94, top: 272, width: 465, height: 270 }, { size: 19, color: C.ink });
+  rect(s, { left: 640, top: 194, width: 575, height: 380 }, C.white, C.line, true);
+  writeText(s, "TOPIC PRESENCE | NEGATIVE COUNT", { left: 668, top: 220, width: 490, height: 34 }, { size: 20, bold: true, color: C.red });
+  writeText(s, concentrated.map(x => `• ${x}`).join("\n\n"), { left: 668, top: 266, width: 490, height: 286 }, { size: 17, color: C.ink });
+  evidenceLink(s, "F");
+}
+
+// 23 — service
+{
+  const s = baseSlide("Service sentiment: Al Safa has the strongest observed positive share", "Chapter 7 — Service Comparison",
+    "Recent 90 days · Service topic only; counts and evidence remain visible");
+  const rows = SLUGS.map(slug => {
+    const x = topic(slug, "recent_90d_topics", "Service");
+    return { restaurant: SHORT[slug], mentions: x.count, positive: `${x.positive_count} · ${pct(x.positive_share_pct)}`, negative: `${x.negative_count} · ${pct(x.negative_share_pct)}`, neutral: x.neutral_count, evidence: x.evidence_level };
+  });
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 240, bold: true },
+    { label: "Mentions", key: "mentions", width: 160, align: "right" },
+    { label: "Positive", key: "positive", width: 240, align: "right" },
+    { label: "Negative", key: "negative", width: 240, align: "right" },
+    { label: "Neutral", key: "neutral", width: 150, align: "right" },
+    { label: "Evidence", key: "evidence", width: 170 },
+  ], { left: 60, top: 205, width: 1170, height: 320 }, { rowH: 64, bodySize: 17 });
+  noteBox(s, "Observed service-positive leader: Al Safa, 22/28 positive (78.6%, high topic evidence). Al Assiel: 12/17 positive and 3/17 negative.", { left: 66, top: 526, width: 1140, height: 84 }, "teal");
+  evidenceLink(s, "G");
+}
+
+// 24 — Food/taste
+{
+  const s = baseSlide("Food & Taste: Al Assiel carries the largest negative counts", "Chapter 8 — Food & Taste Comparison",
+    "Recent 90 days · topic-local sentiment; rating is not used as fallback");
+  const cats = ["Food +","Food −","Taste +","Taste −"];
+  const series = SLUGS.map(slug => {
+    const f = topic(slug, "recent_90d_topics", "Food"), t = topic(slug, "recent_90d_topics", "Taste");
+    return { name: SHORT[slug], values: [f.positive_count ?? 0, f.negative_count ?? 0, t.positive_count ?? 0, t.negative_count ?? 0], fill: COLORS[slug] };
+  });
+  addBar(s, cats, series, { left: 70, top: 192, width: 1140, height: 410 }, { min: 0, labels: false });
+  noteBox(s, "Al Assiel: Food 10 positive / 5 negative; Taste 13 positive / 4 negative, each from 17 mentions. Negative evidence is medium for Food and low for Taste.", { left: 94, top: 586, width: 1080, height: 62 }, "gold");
+  evidenceLink(s, "H");
+}
+
+// 25 — Food/service trend
+{
+  const s = baseSlide("Food and Service sentiment over complete months", "Chapter 8 — Food & Taste Comparison",
+    "Positive share · Apr–Aug 2026 · gaps mean no topic evidence; September is partial and excluded");
+  const months = ["Apr","May","Jun","Jul","Aug"];
+  const foodSeries = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].topic_trends.Food.slice(3).map(x => topicTrendValue(x)), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addGapLineChart(s, months, foodSeries, { left: 50, top: 190, width: 575, height: 380 }, { min: 0, max: 100 });
+  writeText(s, "Food positive share", { left: 200, top: 570, width: 280, height: 26 }, { size: 18, bold: true, color: C.navy, align: "center" });
+  const serviceSeries = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].topic_trends.Service.slice(3).map(x => topicTrendValue(x)), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addGapLineChart(s, months, serviceSeries, { left: 650, top: 190, width: 575, height: 380 }, { min: 0, max: 100 });
+  writeText(s, "Service positive share", { left: 800, top: 570, width: 280, height: 26 }, { size: 18, bold: true, color: C.navy, align: "center" });
+  evidenceLink(s, "H");
+}
+
+// 26 — Taste/value trend
+{
+  const s = baseSlide("Taste and Value trends require count discipline", "Chapter 9 — Price & Value",
+    "Positive share · Apr–Aug 2026 complete months; gaps mean no topic evidence");
+  const months = ["Apr","May","Jun","Jul","Aug"];
+  const tasteSeries = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].topic_trends.Taste.slice(3).map(x => topicTrendValue(x)), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addGapLineChart(s, months, tasteSeries, { left: 50, top: 190, width: 575, height: 380 }, { min: 0, max: 100 });
+  writeText(s, "Taste positive share", { left: 200, top: 570, width: 280, height: 26 }, { size: 18, bold: true, color: C.navy, align: "center" });
+  const valueSeries = SLUGS.map(slug => ({ name: SHORT[slug], values: data.restaurants[slug].topic_trends["Price & Value"].slice(3).map(x => topicTrendValue(x)), line: { style: "solid", fill: COLORS[slug], width: 3 } }));
+  addGapLineChart(s, months, valueSeries, { left: 650, top: 190, width: 575, height: 380 }, { min: 0, max: 100 });
+  writeText(s, "Price & Value positive share", { left: 790, top: 570, width: 320, height: 26 }, { size: 18, bold: true, color: C.navy, align: "center" });
+  evidenceLink(s, "I");
+}
+
+// 27 — Price/value + basket
+{
+  const s = baseSlide("Value sentiment and menu price are different signals", "Chapter 9 — Price & Value",
+    "Recent 90-day review sentiment on the left; selected comparable prices on the right");
+  const sentiment = SLUGS.map(slug => {
+    const x = topic(slug, "recent_90d_topics", "Price & Value");
+    return { restaurant: SHORT[slug], mentions: x.count, positive: x.positive_count, negative: x.negative_count, evidence: x.evidence_level };
+  });
+  addTable(s, sentiment, [
+    { label: "Restaurant", key: "restaurant", width: 210, bold: true },
+    { label: "n", key: "mentions", width: 80, align: "right" },
+    { label: "+", key: "positive", width: 70, align: "right" },
+    { label: "−", key: "negative", width: 70, align: "right" },
+    { label: "Evidence", key: "evidence", width: 140 },
+  ], { left: 50, top: 210, width: 570, height: 300 }, { rowH: 56, bodySize: 16 });
+  const basket = data.comparable_price_basket.filter(x => ["Hummus","Tabbouleh","Mixed Grill","Tea"].includes(x.comparison_item)).slice(0,7).map(x => ({ item: x.comparison_item, restaurant: SHORT[x.restaurant], price: euro(x.price), confidence: x.match_confidence }));
+  addTable(s, basket, [
+    { label: "Item", key: "item", width: 180, bold: true },
+    { label: "Restaurant", key: "restaurant", width: 180 },
+    { label: "Price", key: "price", width: 100, align: "right" },
+    { label: "Match", key: "confidence", width: 130 },
+  ], { left: 645, top: 210, width: 590, height: 410 }, { rowH: 44, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Lower price is not automatically better value.", { left: 50, top: 538, width: 570, height: 64 }, "gold");
+  evidenceLink(s, "N", "Price details →");
+}
+
+// 28 — Kitchen/bar
+{
+  const s = baseSlide("Kitchen vs bar: Olivenzweig has the broadest observed drink program", "Chapter 11 — Kitchen vs Bar / Drinks",
+    "Menu size and review attention are separate; neither implies sales");
+  const rows = SLUGS.map(slug => {
+    const x = data.kitchen_bar_comparison[slug];
+    return { restaurant: SHORT[slug], foodMenu: x.food_menu_size, drinkMenu: x.drink_menu_size, foodAttention: `${x.food_review_attention.count} · ${pct(x.food_review_attention.share_of_written_reviews_pct)}`, drinkAttention: `${x.drink_review_attention.count} · ${pct(x.drink_review_attention.share_of_written_reviews_pct)}`, mocktails: x.mocktail_program_item_count ?? 0 };
+  });
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 220, bold: true },
+    { label: "Food menu", key: "foodMenu", width: 150, align: "right" },
+    { label: "Drinks menu", key: "drinkMenu", width: 165, align: "right" },
+    { label: "Food attention", key: "foodAttention", width: 250, align: "right" },
+    { label: "Drink attention", key: "drinkAttention", width: 250, align: "right" },
+    { label: "Mocktails", key: "mocktails", width: 140, align: "right" },
+  ], { left: 50, top: 202, width: 1180, height: 320 }, { rowH: 64, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Corrected Al Assiel Drinks / Bar count: 34 items. Olivenzweig: 48 observed drink items. Review attention must not be read as demand or sales.", { left: 66, top: 526, width: 1140, height: 78 }, "teal");
+  evidenceLink(s, "J");
+}
+
+// 29 — concepts
+{
+  const s = baseSlide("Concept comparison: buffet is not the same as brunch", "Chapter 12 — Buffet / Brunch / Special Concepts",
+    "Different concepts are kept distinct; unknown remains unknown.");
+  const rows = [
+    { restaurant: "Al Assiel", concept: "Buffet", menu: "Observed concept; not a menu group total", attention: "Broadly positive overall; subtopic evidence sparse", evidence: "mixed by subtopic" },
+    { restaurant: "Olivenzweig", concept: "Weekend Brunch", menu: "26 observed menu items", attention: "Separate brunch offer", evidence: "menu high; review signal limited" },
+    { restaurant: "Al Safa", concept: "No confirmed equivalent", menu: "Unknown", attention: "Not forced into comparison", evidence: "none" },
+    { restaurant: "Beit Fayrouz", concept: "Breakfast / sharing", menu: "4 breakfast; 3 overlapping sharing", attention: "Not labelled brunch", evidence: "menu observed" },
+  ];
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 180, bold: true },
+    { label: "Concept", key: "concept", width: 200 },
+    { label: "Menu evidence", key: "menu", width: 250 },
+    { label: "Observed reading", key: "attention", width: 365 },
+    { label: "Evidence", key: "evidence", width: 175 },
+  ], { left: 40, top: 196, width: 1170, height: 320 }, { rowH: 68, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Al Assiel buffet wording: “Broadly positive overall, but subtopic evidence is sparse.”", { left: 110, top: 536, width: 1060, height: 70 }, "gold");
+  evidenceLink(s, "K");
+}
+
+// 30 — menu structure
+{
+  const s = baseSlide("Menu structures differ materially", "Chapter 13 — Menu Structure",
+    "Observed menu snapshots; overlapping attribute groups are marked and must not be summed");
+  const groups = ["Starters","Grill / Meat Mains","Other Main Dishes","Breakfast","Brunch","Desserts","Drinks / Bar","Sides","Kids"];
+  const rows = groups.map(g => {
+    const r = { group: g };
+    for (const slug of SLUGS) r[slug] = data.menu_comparison[slug].normalized_comparison_groups[g].item_count;
+    return r;
+  });
+  addTable(s, rows, [
+    { label: "Normalized group", key: "group", width: 310, bold: true },
+    ...SLUGS.map(slug => ({ label: SHORT[slug], key: slug, width: 215, align: "right" })),
+  ], { left: 55, top: 184, width: 1170, height: 470 }, { rowH: 43, bodySize: 16, headerSize: 14 });
+  writeText(s, "Olivenzweig: Sides 5, Kids 1—not Other Main Dishes. Beit Fayrouz’s 8 source “Grill & Main Dishes” items are counted once under Grill / Meat Mains.", { left: 70, top: 620, width: 1120, height: 28 }, { size: 15, color: C.muted, align: "center" });
+  evidenceLink(s, "K");
+}
+
+// 31 — dish signals
+{
+  const s = baseSlide("Dish signals are customer attention—not sales", "Chapter 15 — Dish / Favourite Signals",
+    "Mentions, positive share and negative count remain visible");
+  const rows = [];
+  for (const slug of SLUGS) {
+    for (const dish of data.dish_favourite_signals[slug].most_discussed.slice(0,2)) {
+      rows.push({ restaurant: SHORT[slug], dish: dish.dish, mentions: dish.reviews_mentioning, positive: `${dish.positive_reviews} · ${pct(dish.positive_share_of_dish_reviews_pct)}`, negative: dish.negative_reviews, evidence: dish.evidence_level });
+    }
+  }
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 190, bold: true },
+    { label: "Dish", key: "dish", width: 310 },
+    { label: "Mentions", key: "mentions", width: 130, align: "right" },
+    { label: "Positive", key: "positive", width: 210, align: "right" },
+    { label: "Negative", key: "negative", width: 140, align: "right" },
+    { label: "Evidence", key: "evidence", width: 160 },
+  ], { left: 55, top: 188, width: 1160, height: 394 }, { rowH: 44, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Example guardrail: Al Safa Baklava has high mention volume, but its positive share—not mention count alone—must shape the interpretation.", { left: 120, top: 596, width: 1040, height: 48 }, "gold");
+  evidenceLink(s, "L", "Dish details →");
+}
+
+// 32 — tasting shortlist
+{
+  const s = baseSlide("A data-led tasting shortlist", "Chapter 16 — Competitor Tasting Shortlist",
+    "Candidates combine review attention, sentiment, recency, menu position and separate platform signals");
+  const rows = [];
+  for (const slug of SLUGS) {
+    for (const dish of data.tasting_shortlist[slug].slice(0,3)) {
+      rows.push({ restaurant: SHORT[slug], dish: dish.dish, mentions: dish.google_review_mentions, positive: pct(dish.positive_share_pct), recent: dish.recent_mentions, price: euro(dish.menu_price), evidence: dish.evidence_level });
+    }
+  }
+  addTable(s, rows.slice(0,10), [
+    { label: "Restaurant", key: "restaurant", width: 170, bold: true },
+    { label: "Candidate", key: "dish", width: 280 },
+    { label: "Google n", key: "mentions", width: 110, align: "right" },
+    { label: "+ share", key: "positive", width: 120, align: "right" },
+    { label: "Recent", key: "recent", width: 100, align: "right" },
+    { label: "Price", key: "price", width: 110, align: "right" },
+    { label: "Evidence", key: "evidence", width: 150 },
+  ], { left: 55, top: 184, width: 1160, height: 422 }, { rowH: 38, bodySize: 16, headerSize: 14 });
+  rect(s, { left: 55, top: 614, width: 700, height: 34 }, C.softRed, "none", true);
+  writeText(s, "Field-research candidates—not best-seller or most-ordered claims.", { left: 70, top: 621, width: 670, height: 20 }, { size: 14, bold: true, color: C.red });
+  evidenceLink(s, "M");
+}
+
+// 33 — footprint
+{
+  const s = baseSlide("Digital and service footprints shape discoverability", "Chapter 17 — Digital / Service Footprint",
+    "Confirmed, observed and unknown are kept separate");
+  const fields = ["official_website","menu_completeness","delivery","takeaway","online_reservation","parking","outdoor_seating","catering","events"];
+  const rows = fields.map(field => {
+    const row = { capability: field.replaceAll("_", " ").replace(/\b\w/g, c => c.toUpperCase()) };
+    for (const slug of SLUGS) {
+      const v = data.digital_service_footprint[slug][field];
+      row[slug] = typeof v === "string" ? clip(v, 18) : v === true ? "confirmed" : v === false ? "not observed" : clip(v?.status ?? v?.value ?? "unknown", 18);
+    }
+    return row;
+  });
+  addTable(s, rows, [
+    { label: "Capability", key: "capability", width: 250, bold: true },
+    ...SLUGS.map(slug => ({ label: SHORT[slug], key: slug, width: 230 })),
+  ], { left: 55, top: 184, width: 1170, height: 470 }, { rowH: 43, bodySize: 16, headerSize: 14 });
+  writeText(s, "Unknown is not converted into false. Platform availability and official confirmation remain distinct.", { left: 72, top: 624, width: 1120, height: 24 }, { size: 15, color: C.muted, align: "center" });
+  evidenceLink(s, "O");
+}
+
+// 34 — visit program
+{
+  const s = baseSlide("Turn competitor visits into controlled field research", "Chapter 19 — Competitor Visit Program",
+    "Do not visit randomly: pre-select dishes, record evidence, then convert findings into one test.");
+  const steps = [
+    "1  Select 3–5 dishes from the validated shortlist",
+    "2  Include a starter, a main/signature dish and one drink",
+    "3  Test brunch / buffet only where the concept is confirmed",
+    "4  Score arrival, menu, food, drinks, service, environment and commercial cues",
+    "5  Record price, timing, taste, presentation and appropriate visual notes",
+    "6  Discuss in the weekly review and select one controlled Al Assiel experiment",
+  ];
+  writeText(s, steps.join("\n\n"), { left: 80, top: 190, width: 710, height: 400 }, { size: 22, color: C.ink });
+  rect(s, { left: 840, top: 200, width: 330, height: 330 }, C.white, C.line, true);
+  writeText(s, "VISIT OUTPUT", { left: 875, top: 230, width: 260, height: 28 }, { size: 20, bold: true, color: C.teal, align: "center" });
+  writeText(s, "What to copy\n\nWhat not to copy\n\nOne Al Assiel experiment\n\nOwner · metric · deadline", { left: 880, top: 290, width: 250, height: 210 }, { size: 20, bold: true, color: C.navy, align: "center" });
+  evidenceLink(s, "Q", "Open scorecard →");
+}
+
+// 35 — Actions
+{
+  const s = baseSlide("What should Al Assiel do next?", "Chapter 18 — What Al Assiel Should Investigate",
+    "Five evidence-led moves; review the results at 30 and 90 days.", { dark: true });
+  const actions = [
+    ["PROTECT", "Taste and service positives still outnumber negatives in recent topic mentions."],
+    ["INVESTIGATE", "Food quality, taste and service: 10, 6 and 9 negative written low-score cases through cutoff."],
+    ["TEST", "One service-recovery protocol and one food-quality consistency check—each with a named owner."],
+    ["VISIT", "Olivenzweig brunch/drinks; Al Safa value/grill signals; Beit Fayrouz only as a cautious, small-sample reference."],
+    ["MEASURE", "Recent rating, low-score share, Food/Taste negative counts, response rate and reviews/week at 30/90 days."],
+  ];
+  actions.forEach((a,i) => {
+    const y = 184 + i * 84;
+    rect(s, { left: 72, top: y, width: 170, height: 58 }, i === 1 ? C.red : i === 2 ? C.gold : C.teal, "none", true);
+    writeText(s, a[0], { left: 84, top: y + 12, width: 146, height: 34 }, { size: 20, bold: true, color: C.white, align: "center", valign: "middle" });
+    writeText(s, a[1], { left: 280, top: y + 7, width: 860, height: 54 }, { size: 20, color: C.white, valign: "middle" });
+  });
+  evidenceLink(s, "R", "Method & thresholds →");
+}
+
+// ---------- APPENDIX ----------
+function appendix(title, label, subtitle, targetKey, backPage) {
+  const s = baseSlide(title, `Appendix ${label}`, subtitle, { kind: "appendix", appendix: label, targetKey });
+  backLink(s, backPage);
+  return s;
+}
+
+// A
+{
+  const s = appendix("Period definitions", "A — Period Definitions", "Identical boundaries across all four formal restaurants", "A", 2);
+  const rows = Object.entries(data.common_period_boundaries).map(([key, x]) => ({ period: key.replaceAll("_", " "), start: x.start ?? "Dataset start", end: x.end, days: x.duration_days ?? "—" }));
+  addTable(s, rows, [
+    { label: "Period", key: "period", width: 320, bold: true }, { label: "Start", key: "start", width: 270 },
+    { label: "End", key: "end", width: 270 }, { label: "Calendar days", key: "days", width: 230, align: "right" },
+  ], { left: 95, top: 200, width: 1090, height: 360 }, { rowH: 60, bodySize: 18 });
+  noteBox(s, "Formal cutoff: 03 Sep 2026. Reviews after the cutoff remain in source databases but are excluded from formal competitive metrics.", { left: 120, top: 554, width: 1040, height: 70 }, "blue");
+}
+
+// B
+{
+  const s = appendix("Data quality and source coverage", "B — Data Quality", "Review, translation and menu coverage", "B", 2);
+  const rows = SLUGS.map(slug => { const x = data.data_quality[slug]; return { restaurant: SHORT[slug], reviews: x.reviews_collected, written: x.written_reviews, translated: pct(x.non_english_translation_coverage_pct), usable: pct(x.usable_analysis_text_coverage_pct), menu: `${x.menu_items} (${x.menu_priced_items} priced)`, profile: x.profile_source_quality }; });
+  addTable(s, rows, [
+    { label: "Restaurant", key: "restaurant", width: 210, bold: true }, { label: "Reviews", key: "reviews", width: 120, align: "right" },
+    { label: "Written", key: "written", width: 120, align: "right" }, { label: "Non-English translated", key: "translated", width: 220, align: "right" },
+    { label: "Usable text / all", key: "usable", width: 170, align: "right" }, { label: "Menu", key: "menu", width: 220 }, { label: "Profile", key: "profile", width: 140 },
+  ], { left: 42, top: 210, width: 1195, height: 320 }, { rowH: 62, bodySize: 16, headerSize: 14 });
+  noteBox(s, "Translation coverage is calculated only across non-English written reviews. English reviews do not require translation.", { left: 100, top: 536, width: 1080, height: 72 }, "teal");
+}
+
+// C
+{
+  const s = appendix("Recent 90-day detailed benchmark", "C — Recent 90d Benchmark", "06 Jun–03 Sep 2026", "C", 5);
+  const rows = SLUGS.map(slug => { const x=period(slug,"recent_90d"); return { restaurant:SHORT[slug], n:x.review_count, rating:fmt(x.average_rating,3), week:fmt(x.reviews_per_week,3), five:`${x.five_star_count} · ${pct(x.five_star_share_pct)}`, low:`${x.low_score_count} · ${pct(x.low_score_share_pct)}`, written:`${x.written_reviews} · ${pct(x.written_review_share_pct)}`, response:`${x.owner_responses} · ${pct(x.owner_response_rate_pct)}`, evidence:x.evidence_level }; });
+  addTable(s, rows, [
+    {label:"Restaurant",key:"restaurant",width:190,bold:true},{label:"n",key:"n",width:70,align:"right"},{label:"Rating",key:"rating",width:100,align:"right"},{label:"/ week",key:"week",width:100,align:"right"},{label:"5-star",key:"five",width:145,align:"right"},{label:"1–2-star",key:"low",width:145,align:"right"},{label:"Written",key:"written",width:170,align:"right"},{label:"Response",key:"response",width:160,align:"right"},{label:"Evidence",key:"evidence",width:120}
+  ], {left:35,top:205,width:1210,height:330},{rowH:64,bodySize:14,headerSize:12});
+  noteBox(s, "Observed leaders apply only where the defined minimum sample thresholds are satisfied; Beit Fayrouz remains medium evidence in recent 90d.", {left:85,top:535,width:1110,height:78},"blue");
+}
+
+// D
+{
+  const s = appendix("Latest 30-day detailed benchmark", "D — Latest 30d Benchmark", "05 Aug–03 Sep 2026", "D", 10);
+  const rows = SLUGS.map(slug => { const x=period(slug,"latest_30d"),y=period(slug,"previous_30d"); return { restaurant:SHORT[slug], n:x.review_count, rating:fmt(x.average_rating,3), prior:fmt(y.average_rating,3), delta:fmt(x.average_rating-y.average_rating,3), five:`${x.five_star_count} · ${pct(x.five_star_share_pct)}`, low:`${x.low_score_count} · ${pct(x.low_score_share_pct)}`, written:x.written_reviews, evidence:x.evidence_level }; });
+  addTable(s, rows, [
+    {label:"Restaurant",key:"restaurant",width:210,bold:true},{label:"n",key:"n",width:75,align:"right"},{label:"Rating",key:"rating",width:110,align:"right"},{label:"Prior 30d",key:"prior",width:125,align:"right"},{label:"Δ",key:"delta",width:90,align:"right"},{label:"5-star",key:"five",width:170,align:"right"},{label:"1–2-star",key:"low",width:170,align:"right"},{label:"Written",key:"written",width:120,align:"right"},{label:"Evidence",key:"evidence",width:130}
+  ], {left:38,top:205,width:1210,height:330},{rowH:64,bodySize:14,headerSize:12});
+  noteBox(s, "Latest-30-day topic comparisons can be low volume. The deck reports counts first and labels evidence; it does not turn a two-review signal into a strong conclusion.", {left:85,top:535,width:1110,height:78},"gold");
+}
+
+// E1-E3 trend evidence
+for (const [idx, metric] of ["average_rating","review_count","low_score_share_pct"].entries()) {
+  const labels = ["Monthly rating evidence","Monthly review-volume evidence","Monthly low-score evidence"];
+  const s = appendix(labels[idx], `E${idx+1} — Rating Trends`, "Apr–03 Sep 2026; Sep is partial", idx===0 ? "E" : `E${idx+1}`, 12 + idx);
+  const rows=[];
+  for (const month of ["2026-04","2026-05","2026-06","2026-07","2026-08","2026-09"]) {
+    const row={month:month+(month==="2026-09"?"*":"")};
+    for (const slug of SLUGS) { const x=data.restaurants[slug].monthly.find(v=>v.month===month); row[slug]=metric==="average_rating"?fmt(x[metric],2):metric==="low_score_share_pct"?pct(x[metric]):x[metric]; }
+    rows.push(row);
+  }
+  addTable(s, rows, [{label:"Month",key:"month",width:260,bold:true},...SLUGS.map(slug=>({label:SHORT[slug],key:slug,width:220,align:"right"}))],{left:60,top:210,width:1140,height:370},{rowH:52,bodySize:17,headerSize:14});
+  noteBox(s, "* Partial month through 03 Sep. First dataset months are also partial in each restaurant’s full Layer 03 history.", {left:110,top:570,width:1060,height:58},"blue");
+}
+
+// F — recent low-score review register, 3 cases/page
+const recentCases=[];
+for (const slug of SLUGS) for (const c of data.restaurants[slug].recent_low_score_cases) recentCases.push({slug,...c});
+for (let i=0;i<recentCases.length;i+=3) {
+  const pageCases=recentCases.slice(i,i+3);
+  const pageNo=Math.floor(i/3)+1;
+  const s=appendix(`Recent low-score review evidence · ${pageNo}`, `F${pageNo} — Low-Score Evidence`, "Anonymized cases · 06 Jun–03 Sep 2026 · excerpts use stored analysis text", i===0?"F":`F${pageNo}`, 17);
+  pageCases.forEach((c,ri)=>{
+    const y=184+ri*145;
+    rect(s,{left:58,top:y,width:1165,height:132},ri%2?"#F8FAFC":C.white,C.line,true);
+    rect(s,{left:58,top:y,width:8,height:132},COLORS[c.slug]);
+    writeText(s,`${SHORT[c.slug]} · ${c.anonymous_case_id} · ${c.date} · ${c.rating}★`,{left:82,top:y+10,width:510,height:24},{size:16,bold:true,color:C.navy});
+    writeText(s,`Topics: ${c.detected_negative_topics.length?c.detected_negative_topics.join(", "):"none detected / uncertain"}`,{left:82,top:y+36,width:620,height:24},{size:14,color:C.muted});
+    writeText(s,`“${clip(c.analysis_excerpt,125)}”`,{left:82,top:y+64,width:820,height:50},{size:16,color:C.ink});
+    writeText(s,c.has_owner_response?"Owner reply: yes":"Owner reply: no",{left:942,top:y+20,width:150,height:24},{size:14,bold:true,color:c.has_owner_response?C.green:C.red,align:"right"});
+    const hasValidReviewUrl = typeof c.review_url === "string" && /^https?:\/\//i.test(c.review_url);
+    const reviewLabel = hasValidReviewUrl ? "Open original review →" : "Original review link unavailable in source data";
+    const reviewPos = hasValidReviewUrl
+      ? {left:952,top:y+72,width:230,height:26}
+      : {left:892,top:y+67,width:290,height:38};
+    if (hasValidReviewUrl) {
+      addLink(s, reviewLabel, reviewPos, null, null, c.review_url, false, {kind:"original_review",caseId:c.anonymous_case_id});
+    } else {
+      writeText(s, reviewLabel, reviewPos, {size:12,bold:true,color:C.muted,align:"right",valign:"middle"});
+    }
+    reviewLinkAudit.push({
+      page:P.slides.items.length,
+      case_id:c.anonymous_case_id,
+      restaurant:c.slug,
+      label:reviewLabel,
+      status:hasValidReviewUrl?"linked":"unavailable",
+      url:hasValidReviewUrl?c.review_url:null,
+    });
+  });
+}
+
+// G Service evidence
+{
+  const s=appendix("Service topic evidence", "G — Service Evidence", "Recent 90 days · mentions / positive / negative / neutral", "G", 23);
+  const topics=["Service","Staff Friendliness","Staff Attentiveness","Staff Professionalism","Staff Communication","Waiting Time","Hospitality"];
+  const rows=[];
+  for(const slug of SLUGS) for(const t of topics){const x=topic(slug,"recent_90d_topics",t); if((x.count??0)>0)rows.push({restaurant:SHORT[slug],topic:t,n:x.count,pos:x.positive_count,neg:x.negative_count,neu:x.neutral_count,evidence:x.evidence_level});}
+  addTable(s,rows.sort((a,b)=>b.neg-a.neg||b.n-a.n).slice(0,9),[
+    {label:"Restaurant",key:"restaurant",width:175,bold:true},{label:"Topic",key:"topic",width:270},{label:"n",key:"n",width:90,align:"right"},{label:"+",key:"pos",width:90,align:"right"},{label:"−",key:"neg",width:90,align:"right"},{label:"Neutral",key:"neu",width:120,align:"right"},{label:"Evidence",key:"evidence",width:160}
+  ],{left:100,top:180,width:995,height:490},{rowH:44,bodySize:15,headerSize:13});
+}
+
+// H Food evidence
+{
+  const s=appendix("Food & Taste topic evidence", "H — Food / Taste Evidence", "Recent 90 days · highest negative counts shown", "H", 24);
+  const topics=["Food","Taste","Food Quality","Freshness","Food Temperature","Food Presentation","Food Variety","Meat Quality","Authenticity","Portion Size"];
+  const rows=[];
+  for(const slug of SLUGS) for(const t of topics){const x=topic(slug,"recent_90d_topics",t); if((x.count??0)>0)rows.push({restaurant:SHORT[slug],topic:t,n:x.count,pos:x.positive_count,neg:x.negative_count,share:pct(x.negative_share_pct),evidence:x.evidence_level});}
+  addTable(s,rows.sort((a,b)=>b.neg-a.neg||b.n-a.n).slice(0,9),[
+    {label:"Restaurant",key:"restaurant",width:175,bold:true},{label:"Topic",key:"topic",width:260},{label:"n",key:"n",width:85,align:"right"},{label:"+",key:"pos",width:85,align:"right"},{label:"−",key:"neg",width:85,align:"right"},{label:"− share",key:"share",width:130,align:"right"},{label:"Evidence",key:"evidence",width:160}
+  ],{left:115,top:180,width:980,height:490},{rowH:44,bodySize:15,headerSize:13});
+}
+
+// I Value evidence
+{
+  const s=appendix("Price & Value evidence", "I — Price / Value Evidence", "Recent 90 days · sentiment and menu prices remain separate", "I", 27);
+  const rows=SLUGS.map(slug=>{const x=topic(slug,"recent_90d_topics","Price & Value");return{restaurant:SHORT[slug],n:x.count,pos:x.positive_count,neg:x.negative_count,neutral:x.neutral_count,posShare:pct(x.positive_share_pct),negShare:pct(x.negative_share_pct),evidence:x.evidence_level};});
+  addTable(s,rows,[{label:"Restaurant",key:"restaurant",width:230,bold:true},{label:"n",key:"n",width:90,align:"right"},{label:"+",key:"pos",width:90,align:"right"},{label:"−",key:"neg",width:90,align:"right"},{label:"Neutral",key:"neutral",width:130,align:"right"},{label:"+ share",key:"posShare",width:150,align:"right"},{label:"− share",key:"negShare",width:150,align:"right"},{label:"Evidence",key:"evidence",width:150}],{left:95,top:215,width:1080,height:320},{rowH:62,bodySize:17,headerSize:14});
+  noteBox(s,"Do not equate lower price with better value. Price observations carry a source date and match-confidence field in Appendix N.",{left:120,top:542,width:1040,height:70},"gold");
+}
+
+// J Drinks evidence
+{
+  const s=appendix("Drinks / bar evidence", "J — Drinks Evidence", "Menu counts, review attention and recent sentiment", "J", 28);
+  const rows=SLUGS.map(slug=>{const k=data.kitchen_bar_comparison[slug],t=topic(slug,"recent_90d_topics","Drinks");return{restaurant:SHORT[slug],items:k.drink_menu_size,attention:k.drink_review_attention.count,recent:t.count,pos:t.positive_count,neg:t.negative_count,evidence:t.evidence_level};});
+  addTable(s,rows,[{label:"Restaurant",key:"restaurant",width:230,bold:true},{label:"Menu items",key:"items",width:160,align:"right"},{label:"All-time attention",key:"attention",width:210,align:"right"},{label:"Recent n",key:"recent",width:130,align:"right"},{label:"Recent +",key:"pos",width:130,align:"right"},{label:"Recent −",key:"neg",width:130,align:"right"},{label:"Evidence",key:"evidence",width:150}],{left:70,top:215,width:1130,height:320},{rowH:62,bodySize:17,headerSize:14});
+  noteBox(s,"Validated Al Assiel count: 34 drinks / bar items—not 33. Review attention is not sales or ordering data.",{left:120,top:542,width:1040,height:70},"teal");
+}
+
+// K Menu normalization
+{
+  const s=appendix("Menu normalization decisions", "K — Menu Normalization", "Primary vs overlapping groups", "K", 30);
+  const rows=[
+    {restaurant:"Olivenzweig",source:"Extra Sides",normalized:"Sides (5)",mode:"primary",note:"Never shown as Other Main Dishes"},
+    {restaurant:"Olivenzweig",source:"Kids & Desserts",normalized:"Desserts (2); Kids (1)",mode:"item-level",note:"Items separated by type"},
+    {restaurant:"Beit Fayrouz",source:"Grill & Main Dishes",normalized:"Grill / Meat Mains (8)",mode:"item-level",note:"Not double-counted as Other Mains"},
+    {restaurant:"All",source:"Sharing / Vegetarian",normalized:"Attribute groups",mode:"overlapping",note:"Counts cannot be summed"},
+  ];
+  addTable(s,rows,[{label:"Restaurant",key:"restaurant",width:190,bold:true},{label:"Source category",key:"source",width:250},{label:"Normalized",key:"normalized",width:280},{label:"Mode",key:"mode",width:170},{label:"Management note",key:"note",width:330}],{left:40,top:210,width:1220,height:330},{rowH:64,bodySize:16,headerSize:14});
+  noteBox(s,"Every original source category remains stored. The display normalization prevents sides or shared source labels from looking like additive main-dish inventory.",{left:100,top:548,width:1080,height:72},"blue");
+}
+
+// L Dish evidence
+{
+  const s=appendix("Dish / favourite signal details", "L — Dish Signals", "Top discussed item per restaurant; attention is not sales", "L", 31);
+  const rows=[];
+  for(const slug of SLUGS){const x=data.dish_favourite_signals[slug].most_discussed[0]; if(x)rows.push({restaurant:SHORT[slug],dish:x.dish,n:x.reviews_mentioning,pos:x.positive_reviews,posShare:pct(x.positive_share_of_dish_reviews_pct),neg:x.negative_reviews,evidence:x.evidence_level});}
+  addTable(s,rows,[{label:"Restaurant",key:"restaurant",width:205,bold:true},{label:"Dish",key:"dish",width:300},{label:"n",key:"n",width:90,align:"right"},{label:"+",key:"pos",width:90,align:"right"},{label:"+ share",key:"posShare",width:150,align:"right"},{label:"−",key:"neg",width:90,align:"right"},{label:"Evidence",key:"evidence",width:160}],{left:95,top:215,width:1085,height:320},{rowH:62,bodySize:17,headerSize:14});
+  noteBox(s,"Comparative highest / lowest dish rankings require at least three qualified dishes at the 5-review threshold. Two qualified dishes are not labelled best and worst.",{left:110,top:542,width:1060,height:76},"gold");
+}
+
+// M Tasting
+{
+  const s=appendix("Competitor tasting shortlist", "M — Tasting Shortlist", "First-line field-research candidates", "M", 32);
+  const rows=[];for(const slug of SLUGS)for(const x of data.tasting_shortlist[slug].slice(0,2))rows.push({restaurant:SHORT[slug],dish:x.dish,n:x.google_review_mentions,pos:pct(x.positive_share_pct),recent:x.recent_mentions,price:euro(x.menu_price),evidence:x.evidence_level});
+  addTable(s,rows,[{label:"Restaurant",key:"restaurant",width:180,bold:true},{label:"Candidate",key:"dish",width:300},{label:"Google n",key:"n",width:120,align:"right"},{label:"+ share",key:"pos",width:130,align:"right"},{label:"Recent n",key:"recent",width:120,align:"right"},{label:"Price",key:"price",width:120,align:"right"},{label:"Evidence",key:"evidence",width:150}],{left:75,top:190,width:1120,height:450},{rowH:48,bodySize:16,headerSize:14});
+}
+
+// N price basket across readable pages
+for(let i=0;i<data.comparable_price_basket.length;i+=10){
+  const rows=data.comparable_price_basket.slice(i,i+10).map(x=>({item:clip(x.comparison_item,18),restaurant:SHORT[x.restaurant],matched:clip(x.matched_item,20),price:euro(x.price),date:(x.source_date??"").startsWith("not recorded")?"not recorded":(x.source_date??"—"),confidence:x.match_confidence}));
+  const no=Math.floor(i/10)+1;
+  const s=appendix(`Comparable price basket · ${no}`,`N${no} — Comparable Price Basket`,"Reasonable equivalents only; source date and confidence shown",i===0?"N":`N${no}`,27);
+  addTable(s,rows,[{label:"Comparison",key:"item",width:175,bold:true},{label:"Restaurant",key:"restaurant",width:170},{label:"Matched item",key:"matched",width:320},{label:"Price",key:"price",width:110,align:"right"},{label:"Source date",key:"date",width:145},{label:"Match",key:"confidence",width:145}],{left:42,top:174,width:1210,height:470},{rowH:42,bodySize:16,headerSize:14});
+}
+
+// O footprint
+{
+  const s=appendix("Digital / service footprint details", "O — Digital / Service Footprint", "Status values come from stored source registers and validated review datasets", "O", 33);
+  const fields=["official_website","menu_completeness","google_presence","delivery","takeaway","online_reservation","parking","payment","outdoor_seating","catering","events","opening_hours"];
+  const rows=fields.map(field=>{const r={capability:field.replaceAll("_"," ").replace(/\b\w/g,c=>c.toUpperCase())};for(const slug of SLUGS){const v=data.digital_service_footprint[slug][field];r[slug]=clip(typeof v==="string"?v:v===true?"confirmed":v===false?"not observed":v?.status??v?.value??"unknown",17);}return r;});
+  addTable(s,rows.slice(0,10),[{label:"Capability",key:"capability",width:235,bold:true},...SLUGS.map(slug=>({label:SHORT[slug],key:slug,width:235}))],{left:50,top:178,width:1175,height:490},{rowH:44,bodySize:16,headerSize:14});
+}
+
+// P source/conflicts — one restaurant per page so conflict wording stays intact.
+for(let page=0;page<SLUGS.length;page++){
+  const slug=SLUGS[page];
+  const s=appendix(`${SHORT[slug]} sources and conflicts`,`P${page+1} — Source Register / Conflicts`,"Stored sources only; no new public research",page===0?"P":`P${page+1}`,2);
+  const sources=data.source_registers[slug].sources;
+  const sourceRows=sources.slice(0,8).map(src=>({source:src.source_name,type:src.source_type,confidence:src.confidence,used:clip((src.used_for??[]).join(", "),42)}));
+  const sourceText=row=>`• ${row.source} (${row.confidence})\n  ${row.type}`;
+  writeText(s,sourceRows.slice(0,4).map(sourceText).join("\n\n"),{left:66,top:176,width:550,height:220},{size:16,color:C.ink});
+  writeText(s,sourceRows.slice(4,8).map(sourceText).join("\n\n"),{left:650,top:176,width:550,height:220},{size:16,color:C.ink});
+  const conflictRows=[];for(const src of sources)for(const conflict of (src.conflicts??[]))conflictRows.push(`${src.source_name}: ${conflict}`);
+  const conflictTop=420;
+  writeText(s,"DOCUMENTED CONFLICTS",{left:66,top:conflictTop,width:360,height:28},{size:18,bold:true,color:C.red});
+  writeText(s,(conflictRows.length?conflictRows:["No material conflict recorded"]).map(x=>`• ${x}`).join("\n"),{left:66,top:conflictTop+38,width:1120,height:170},{size:16,color:C.ink});
+}
+
+// Q Scorecard 1 and 2
+{
+  const s=appendix("Competitor visit scorecard · visit facts", "Q1 — Competitor Visit Scorecard", "Print or complete digitally—one form per visit", "Q", 34);
+  addTable(s,[
+    {section:"VISIT",fields:"Restaurant · date · time · team members"},
+    {section:"ARRIVAL",fields:"Parking · signage · welcome · wait to seat"},
+    {section:"MENU",fields:"Clarity · visuals · favourites · recommendations · offers · bundles · ordering flow"},
+    {section:"FOOD",fields:"Dish · price · taste · seasoning · temperature · freshness · tenderness · portion · presentation · bread · sides · sauces · time to table"},
+    {section:"DRINKS",fields:"Drink · price · presentation · taste · recommendation"},
+  ],[{label:"Section",key:"section",width:220,bold:true},{label:"Record",key:"fields",width:850}],{left:105,top:188,width:1070,height:410},{rowH:72,bodySize:17,headerSize:15});
+}
+{
+  const s=appendix("Competitor visit scorecard · interpretation", "Q2 — Competitor Visit Scorecard", "Convert observations into one controlled experiment", "Q2", 34);
+  addTable(s,[
+    {section:"SERVICE",fields:"Friendliness · knowledge · attentiveness · communication · recommendation behavior"},
+    {section:"ENVIRONMENT",fields:"Cleanliness · comfort · noise · atmosphere"},
+    {section:"COMMERCIAL",fields:"Price/value · offers · bundles · upsell"},
+    {section:"CONCLUSION",fields:"What competitor does better · what Al Assiel does better · what not to copy"},
+    {section:"EXPERIMENT",fields:"One Al Assiel experiment · owner · metric · deadline"},
+  ],[{label:"Section",key:"section",width:220,bold:true},{label:"Record",key:"fields",width:850}],{left:105,top:188,width:1070,height:410},{rowH:72,bodySize:17,headerSize:15});
+}
+
+// R methodology
+{
+  const s=appendix("Methodology and evidence thresholds", "R — Methodology / Thresholds", "Transparent, deterministic and review-local", "R", 35);
+  const rows=[
+    {rule:"Sentiment",detail:"Topic- and clause-local; overall star rating is never a sentiment fallback."},
+    {rule:"Sentiment evidence",detail:"1–4 supporting reviews = low; 5–14 = medium; 15+ = high; zero = none."},
+    {rule:"Formal benchmark",detail:"Only reviews on or before 03 Sep 2026; identical common windows."},
+    {rule:"Leader labels",detail:"Overall ≥5 reviews; topic ≥5 mentions and ≥3 positive reviews; otherwise insufficient evidence."},
+    {rule:"Dish wording",detail:"Customer attention / sentiment only; never best-seller or sales inference."},
+    {rule:"Menu groups",detail:"Primary groups are non-duplicative; overlapping attributes are flagged and never summed."},
+    {rule:"Unknown",detail:"Unknown remains unknown; absence of evidence is not converted into false."},
+  ];
+  addTable(s,rows,[{label:"Rule",key:"rule",width:240,bold:true},{label:"Implementation",key:"detail",width:850}],{left:95,top:178,width:1090,height:470},{rowH:56,bodySize:16,headerSize:14});
+}
+
+// Resolve link targets and export.
+for (const link of linkManifest) {
+  if (link.targetKey) {
+    const target = targetPages[link.targetKey];
+    if (!target) throw new Error(`Unresolved internal target ${link.targetKey}`);
+    link.targetPage = target;
+  }
+  delete link.targetKey;
+}
+
+async function writeBlob(filePath, blob) {
+  await fs.writeFile(filePath, new Uint8Array(await blob.arrayBuffer()));
+}
+
+for (const [index, slide] of P.slides.items.entries()) {
+  const stem = `slide-${String(index + 1).padStart(2, "0")}`;
+  const png = await P.export({ slide, format: "png", scale: 2 });
+  await writeBlob(path.join(slidesDir, `${stem}.png`), png);
+  const layout = await slide.export({ format: "layout" });
+  await fs.writeFile(path.join(slidesDir, `${stem}.layout.json`), await layout.text());
+}
+const montage = await P.export({ format: "webp", montage: true, scale: 0.35 });
+await writeBlob(path.join(slidesDir, "deck-montage.webp"), montage);
+const pptx = await PresentationFile.exportPptx(P);
+await pptx.save(pptxPath);
+await fs.writeFile(linkManifestPath, JSON.stringify(linkManifest, null, 2));
+await fs.writeFile(slideListPath, JSON.stringify(slideMeta, null, 2));
+await fs.writeFile(reviewAuditPath, JSON.stringify(reviewLinkAudit, null, 2));
+console.log(`Slides: ${P.slides.items.length}`);
+console.log(`PPTX: ${pptxPath}`);

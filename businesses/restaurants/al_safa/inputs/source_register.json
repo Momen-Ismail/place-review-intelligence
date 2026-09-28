@@ -1,0 +1,155 @@
+{
+  "restaurant": "Al Safa Restaurant",
+  "snapshot_date": "2026-09-21",
+  "sources": [
+    {
+      "source_name": "Al Safa official website",
+      "source_type": "official_restaurant_website",
+      "url": "https://alsafarestaurant.com/",
+      "retrieved_at": "2026-09-20",
+      "used_for": [
+        "identity",
+        "since-1998 positioning"
+      ],
+      "confidence": "medium",
+      "authority_level": "high",
+      "notes": "Minimal site; no complete crawlable menu represented in the supplied research.",
+      "conflicts": []
+    },
+    {
+      "source_name": "Speisekarte.de Al Safa menu",
+      "source_type": "current_menu_listing",
+      "url": "https://www.speisekarte.de/bonn/restaurant/al_safa_restaurant/speisekarte",
+      "retrieved_at": "2026-09-20",
+      "source_snapshot_date": "2026-04-27",
+      "used_for": [
+        "24 current public menu entries",
+        "selected visible prices",
+        "reservations/services cross-check"
+      ],
+      "confidence": "medium",
+      "authority_level": "medium",
+      "notes": "Public listing is explicitly dated 2026-04-27 and omits prices for several items.",
+      "conflicts": [
+        "Some prices differ from the undated physical-menu extraction; the dated public value is preferred when both are present."
+      ]
+    },
+    {
+      "source_name": "Legacy Al Safa public menu snapshot",
+      "source_type": "secondary_restaurant_menu_snapshot",
+      "url": "https://alsafa-restaurant.eu/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "menu",
+        "prices",
+        "distinctive offer"
+      ],
+      "confidence": "low",
+      "authority_level": "low",
+      "notes": "Ownership/current maintenance of alsafa-restaurant.eu was not established; retained as a dated catalog observation, not treated as the official site.",
+      "conflicts": [
+        "Brief says the official current menu is incomplete; treat prices as a public listing snapshot, not a guaranteed complete current menu."
+      ]
+    },
+    {
+      "source_name": "Al Safa physical-menu snapshot",
+      "source_type": "supplied_physical_menu",
+      "url": null,
+      "retrieved_at": "2026-09-23",
+      "used_for": [
+        "selected physical-menu prices and item cross-check"
+      ],
+      "confidence": "medium",
+      "authority_level": "supporting",
+      "notes": "Physical-menu observations embedded in the supplied research PDF; menu date not stated.",
+      "conflicts": [
+        "Türkische Pizza: physical €5.00 vs dated public listing €6.00.",
+        "Lammkoteletts: physical €16.50 vs dated public listing €17.00."
+      ]
+    },
+    {
+      "source_name": "Speisekarte.menu PDF mirror",
+      "source_type": "menu_aggregator_pdf",
+      "url": "https://weur-cdn.speisekarte.menu/storage/media/companies_menu_pdf/114136566/al-safa-bonn-speisekarte.pdf",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "secondary menu availability"
+      ],
+      "confidence": "low",
+      "authority_level": "low",
+      "notes": null,
+      "conflicts": [
+        "Snapshot date and currentness are not authoritative; not used to overwrite public website prices."
+      ]
+    },
+    {
+      "source_name": "Restaurant Guru Al Safa Bonn",
+      "source_type": "reputable_listing",
+      "url": "https://de.restaurantguru.com/al-safa-Bonn",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "hours",
+        "terrace description",
+        "profile cross-check"
+      ],
+      "confidence": "low",
+      "authority_level": "low",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Online Tischreservierung listing",
+      "source_type": "booking_listing",
+      "url": "https://www.online-tischreservierung.de/restaurant/index/Nordrhein-Westfalen/Bonn/T%C3%BCrkisch/aab8o4e09k/Al%20Safa%20Restaurant%20%28Orientalische%20K%C3%BCche%29/",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "address",
+        "hours"
+      ],
+      "confidence": "medium",
+      "authority_level": "medium",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Google Maps target",
+      "source_type": "google_business_maps",
+      "url": "https://www.google.com/maps/place/Al+Safa+Restaurant/@50.6848367,7.1569974,17z/data=!4m8!3m7!1s0x47bee46d93a79a23:0x591d8b3a13468bfd!8m2!3d50.6848367!4d7.1569974!9m1!1b1!16s%2Fg%2F11cn2tr8qd",
+      "retrieved_at": "2026-09-21",
+      "used_for": [
+        "review collection",
+        "map identity"
+      ],
+      "confidence": "high",
+      "authority_level": "high",
+      "notes": null,
+      "conflicts": []
+    },
+    {
+      "source_name": "Supplied competitive-intelligence PDF",
+      "source_type": "supplied_research",
+      "url": null,
+      "document_name": "Al_Assiel_Bonn_Competitor_Intelligence_Report_2026.pdf",
+      "document_sha256": "0bb673506e50bf94a8b48b6f1bbbb7707d5c550e0480fc0723f04f48cbae4bca",
+      "source_snapshot_date": "2026-09-20",
+      "retrieved_at": "2026-09-23",
+      "used_for": [
+        "profile correction",
+        "24-entry public-menu cross-check",
+        "10 physical-menu price observations",
+        "positioning/service notes"
+      ],
+      "page_references": [
+        21,
+        22
+      ],
+      "confidence": "medium",
+      "authority_level": "supporting",
+      "notes": "User-supplied synthesized research; used below current official/owned/Google/current-platform sources.",
+      "conflicts": [
+        "Türkische Pizza €5 physical vs €6 dated public listing; €6 retained.",
+        "Lammkoteletts €16.50 physical vs €17 dated public listing; €17 retained."
+      ]
+    }
+  ]
+}

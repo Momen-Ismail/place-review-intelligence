@@ -1,17 +1,15 @@
-# Environment / secrets
 .env
-
-# Python
+.venv/
 __pycache__/
 *.pyc
-*.pyo
-
-# Virtual environments
-.venv/
-venv/
-
-# macOS
 .DS_Store
+~$*.xlsx
 
-# Local database
-*.db
+# Generated layer outputs are reproducible local artifacts.
+output/
+
+# Persistent business databases are local source data, never repository files.
+businesses/**/data/*.db
+businesses/**/data/*.db-*
+businesses/**/data/*.sqlite
+businesses/**/data/*.sqlite3

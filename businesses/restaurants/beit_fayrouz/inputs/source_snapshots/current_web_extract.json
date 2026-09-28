@@ -1,0 +1,59 @@
+{
+  "restaurant": "Beit Fayrouz Restaurant",
+  "snapshot_date": "2026-09-21",
+  "profile_claims": {
+    "address": "Villichgasse 1, 53177 Bonn",
+    "opening_hours": {
+      "monday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)",
+      "tuesday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)",
+      "wednesday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)",
+      "thursday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)",
+      "friday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)",
+      "saturday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)",
+      "sunday": "11:00-23:45 (Uber Eats service hours; venue hours not independently verified)"
+    },
+    "features": {
+      "dine_in": true,
+      "takeaway": true,
+      "delivery": true,
+      "reservations": null,
+      "outdoor_seating": null,
+      "indoor_seating": true,
+      "parking_available": null,
+      "payment_methods": null,
+      "halal_positioning": "Supported as an Uber Eats category only",
+      "breakfast": true,
+      "buffet": false,
+      "catering": null,
+      "events": null,
+      "bar_drinks": false,
+      "family_groups": true
+    },
+    "distinctive_offer": [
+      "breakfast menu",
+      "family sharing platter",
+      "delivery platform recommended-item signals"
+    ]
+  },
+  "menu_summary": {
+    "categories": [
+      "Breakfast",
+      "Drinks",
+      "Grill & Main Dishes",
+      "Mezza & Starters",
+      "Salads",
+      "Sandwiches",
+      "Sharing Platters",
+      "Specials"
+    ],
+    "item_count": 34,
+    "priced_items": 34
+  },
+  "source_urls": [
+    "https://www.lieferando.de/speisekarte/beit-fayrouz",
+    "https://www.ubereats.com/de/store/beit-fayrouz-restaurant/NglP3wZEUH-5reilsPP94Q?isMatchbox=true",
+    "https://www.google.com/maps/place/Beit+Fayrouz+Restaurant/@50.6851301,7.1533365,17z/data=!4m8!3m7!1s0x47bee51e12748a15:0xb6bfc21bcfbce636!8m2!3d50.6851301!4d7.1533365!9m1!1b1!16s%2Fg%2F11nc0xvtdy",
+    "https://www.neueroeffnung.info/bonn/beit-fayrouz-restaurant"
+  ],
+  "refresh_note": "Local September 2026 snapshot for reproducibility; future work must refresh changed menus, prices, hours, and services."
+}

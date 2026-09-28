@@ -1,0 +1,656 @@
+{
+  "restaurant": "Beit Fayrouz Restaurant",
+  "snapshot_date": "2026-09-21",
+  "source": "See source_register.json and each item source field",
+  "categories": [
+    "Breakfast",
+    "Drinks",
+    "Grill & Main Dishes",
+    "Mezza & Starters",
+    "Salads",
+    "Sandwiches",
+    "Sharing Platters",
+    "Specials"
+  ],
+  "items": [
+    {
+      "category": "Breakfast",
+      "name": "Frühstück für 2 Personen",
+      "english_name": "Frühstück für 2 Personen",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "breakfast for two"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Breakfast",
+      "name": "Foul Medammas",
+      "english_name": "Foul Medammas",
+      "description": null,
+      "price_eur": 9.5,
+      "price": 9.5,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "foul",
+        "ful",
+        "fava beans"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Breakfast",
+      "name": "Falafel Teller",
+      "english_name": "Falafel Teller",
+      "description": null,
+      "price_eur": 10.0,
+      "price": 10.0,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "falafel plate",
+        "falafel platter"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Breakfast",
+      "name": "Shakshuka",
+      "english_name": "Shakshuka",
+      "description": null,
+      "price_eur": 13.0,
+      "price": 13.0,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "shakshouka"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Hummus",
+      "english_name": "Hummus",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "humus",
+        "houmous",
+        "حمص"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Moutabal",
+      "english_name": "Moutabal",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "mutabbal",
+        "متبل"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Baba Ghanoush",
+      "english_name": "Baba Ghanoush",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "baba ganoush",
+        "بابا غنوج"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Labneh mit Knoblauch",
+      "english_name": "Labneh mit Knoblauch",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegetarian"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "garlic labneh"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Hummus mit Fleisch",
+      "english_name": "Hummus mit Fleisch",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "uber_eats_recommended_variant_at_8.40"
+      ],
+      "aliases": [
+        "hummus with meat",
+        "meat hummus"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Schawarma Hummus",
+      "english_name": "Schawarma Hummus",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "shawarma hummus"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Gebackene Kibbeh",
+      "english_name": "Gebackene Kibbeh",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "baked kibbeh",
+        "kibbeh"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Mezza & Starters",
+      "name": "Falafel Portion",
+      "english_name": "Falafel Portion",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "falafel"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Kebab Teller",
+      "english_name": "Kebab Teller",
+      "description": null,
+      "price_eur": 14.9,
+      "price": 14.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "uber_eats_category_signal"
+      ],
+      "aliases": [
+        "kebab plate",
+        "kebab platter"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Sharing Platters",
+      "name": "Familienplatte für 2",
+      "english_name": "Familienplatte für 2",
+      "description": null,
+      "price_eur": 46.9,
+      "price": 46.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "family platter for two",
+        "family grill"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Lammspieße Teller",
+      "english_name": "Lammspieße Teller",
+      "description": null,
+      "price_eur": 16.9,
+      "price": 16.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb skewers plate"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Sharing Platters",
+      "name": "Schawarma & Grill Platte",
+      "english_name": "Schawarma & Grill Platte",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "shawarma and grill platter"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Dorade",
+      "english_name": "Dorade",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "dorado",
+        "sea bream"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Halbes Hähnchen",
+      "english_name": "Halbes Hähnchen",
+      "description": null,
+      "price_eur": 11.9,
+      "price": 11.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "half chicken",
+        "grilled half chicken"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Ganzes Hähnchen",
+      "english_name": "Ganzes Hähnchen",
+      "description": null,
+      "price_eur": 20.9,
+      "price": 20.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "whole chicken",
+        "grilled chicken"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Schisch Taouk Teller",
+      "english_name": "Schisch Taouk Teller",
+      "description": null,
+      "price_eur": 14.9,
+      "price": 14.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "uber_eats_recommended_at_13.30"
+      ],
+      "aliases": [
+        "shish taouk",
+        "shish tawook",
+        "chicken skewer plate"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Lammkotelett Teller",
+      "english_name": "Lammkotelett Teller",
+      "description": null,
+      "price_eur": 20.9,
+      "price": 20.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb chops",
+        "lamb chop plate"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Grill & Main Dishes",
+      "name": "Gemischter Grillteller",
+      "english_name": "Gemischter Grillteller",
+      "description": null,
+      "price_eur": 24.9,
+      "price": 24.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "uber_eats_recommended_at_24.00"
+      ],
+      "aliases": [
+        "mixed grill",
+        "mixed grill platter"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Kebab Sandwich",
+      "english_name": "Kebab Sandwich",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "kebab wrap"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Aleppo Kebab Sandwich",
+      "english_name": "Aleppo Kebab Sandwich",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "halabi kebab sandwich"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Schisch Taouk Sandwich",
+      "english_name": "Schisch Taouk Sandwich",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "shish taouk wrap",
+        "chicken skewer sandwich"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Sandwiches",
+      "name": "Schawarma Kalb Sandwich",
+      "english_name": "Schawarma Kalb Sandwich",
+      "description": null,
+      "price_eur": 6.65,
+      "price": 6.65,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [
+        "uber_eats_recommended"
+      ],
+      "aliases": [
+        "veal shawarma sandwich",
+        "shawarma sandwich"
+      ],
+      "source": "uber_eats_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Specials",
+      "name": "Lammleber",
+      "english_name": "Lammleber",
+      "description": null,
+      "price_eur": 13.9,
+      "price": 13.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb liver"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Specials",
+      "name": "Lammauflauf",
+      "english_name": "Lammauflauf",
+      "description": null,
+      "price_eur": 16.9,
+      "price": 16.9,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "lamb casserole",
+        "lamb stew"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Salads",
+      "name": "Fattoush",
+      "english_name": "Fattoush",
+      "description": null,
+      "price_eur": 8.9,
+      "price": 8.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "fattush",
+        "فتوش"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Salads",
+      "name": "Tabbouleh",
+      "english_name": "Tabbouleh",
+      "description": null,
+      "price_eur": 7.9,
+      "price": 7.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "tabouleh",
+        "tabouli",
+        "تبولة"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Salads",
+      "name": "Rucola Salat",
+      "english_name": "Rucola Salat",
+      "description": null,
+      "price_eur": 6.9,
+      "price": 6.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "rocket salad",
+        "arugula salad"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Salads",
+      "name": "Fattoush Beit Fayrouz",
+      "english_name": "Fattoush Beit Fayrouz",
+      "description": null,
+      "price_eur": 9.9,
+      "price": 9.9,
+      "currency": "EUR",
+      "dietary_tags": [
+        "vegan"
+      ],
+      "platform_signals": [],
+      "aliases": [
+        "eggplant fattoush"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Drinks",
+      "name": "Fritz-Kola 0.33l",
+      "english_name": "Fritz-Kola 0.33l",
+      "description": null,
+      "price_eur": 2.5,
+      "price": 2.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "fritz kola",
+        "cola"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    },
+    {
+      "category": "Drinks",
+      "name": "Sprite 0.33l",
+      "english_name": "Sprite 0.33l",
+      "description": null,
+      "price_eur": 2.5,
+      "price": 2.5,
+      "currency": "EUR",
+      "dietary_tags": [],
+      "platform_signals": [],
+      "aliases": [
+        "sprite"
+      ],
+      "source": "lieferando_menu_2026_09_21",
+      "source_date": "2026-09-21",
+      "source_confidence": "medium"
+    }
+  ],
+  "price_conflict_policy": "Conflicting prices remain source-specific and are not silently merged."
+}

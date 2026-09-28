@@ -1,0 +1,69 @@
+{
+  "restaurant": "Olivenzweig Restaurant",
+  "snapshot_date": "2026-09-21",
+  "profile_claims": {
+    "address": "Budapester Str. 11, 53111 Bonn",
+    "opening_hours": {
+      "monday": "closed",
+      "tuesday_thursday_sunday": "12:00-00:00",
+      "friday_saturday": "12:00-01:00",
+      "kitchen_closes": "one hour before venue close"
+    },
+    "features": {
+      "dine_in": true,
+      "takeaway": true,
+      "delivery": true,
+      "reservations": true,
+      "outdoor_seating": null,
+      "indoor_seating": true,
+      "parking_available": true,
+      "parking_note": "Paid parking listed at Berliner Platz 2",
+      "payment_methods": null,
+      "halal_positioning": null,
+      "weekend_brunch": true,
+      "buffet": false,
+      "catering": true,
+      "events": true,
+      "bar_drinks": true,
+      "family_groups": true
+    },
+    "distinctive_offer": [
+      "weekend brunch",
+      "smoked meat",
+      "premium sharing platters",
+      "broad non-alcoholic drinks range",
+      "catering and events"
+    ]
+  },
+  "menu_summary": {
+    "categories": [
+      "Coffee",
+      "Cold Drinks",
+      "Cold Starters",
+      "Extra Sides",
+      "Grill",
+      "Home-made Iced Tea",
+      "Kids & Desserts",
+      "Milkshakes",
+      "Mocktails",
+      "Salads",
+      "Smoked Meat",
+      "Tea",
+      "Warm Starters & Sandwiches",
+      "Weekend Brunch"
+    ],
+    "item_count": 128,
+    "priced_items": 127
+  },
+  "source_urls": [
+    "https://www.olivenzweig-restaurant.de/",
+    "https://www.olivenzweig-restaurant.de/unser-menu/",
+    "https://www.olivenzweig-restaurant.de/brunch-menu/",
+    "https://www.olivenzweig-restaurant.de/dienstleistungen/",
+    "https://www.olivenzweig-restaurant.de/reservierungen/",
+    "https://www.olivenzweig-restaurant.de/kontakt/",
+    "https://www.olivenzweigrestaurant-bonn.de/",
+    "https://www.google.com/maps/place/Olivenzweig+Restaurant/@50.7359368,7.0950361,17z/data=!4m8!3m7!1s0x47bee1801c84e23d:0xd66d4911494975e3!8m2!3d50.7359368!4d7.0950361!9m1!1b1!16s%2Fg%2F11y5vj5vwp"
+  ],
+  "refresh_note": "Local September 2026 snapshot; source priority and item-level conflicts remain explicit."
+}
