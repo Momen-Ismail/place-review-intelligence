@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-09-14T07:20:55.614141+00:00",
+  "source": "existing reviews.db",
+  "places": [
+    {
+      "place_id": "ChIJC5nPXgDhvkcRX5l3macxoCc",
+      "title": "Al Assiel Restaurant & Shisha",
+      "stored_reviews": 298,
+      "stored_average_rating": 4.48
+    }
+  ]
+}

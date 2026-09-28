@@ -1,0 +1,75 @@
+{
+  "template_version": "1.0",
+  "purpose": "Structured field-research observation; keep separate from Google review sentiment.",
+  "restaurant": null,
+  "date": null,
+  "time": null,
+  "team_member": null,
+  "arrival": {
+    "parking": null,
+    "signage": null,
+    "welcome": null,
+    "wait_to_be_seated_minutes": null
+  },
+  "menu": {
+    "clarity": null,
+    "size": null,
+    "recommendations": null,
+    "favourites": null,
+    "offers": null,
+    "bundles": null,
+    "photos_video": null,
+    "ordering_process": null
+  },
+  "food_tests": [
+    {
+      "dish": null,
+      "price_eur": null,
+      "taste": null,
+      "seasoning": null,
+      "temperature": null,
+      "freshness": null,
+      "tenderness": null,
+      "portion": null,
+      "presentation": null,
+      "sides_sauces": null,
+      "time_to_table_minutes": null
+    }
+  ],
+  "drink_tests": [
+    {
+      "drink": null,
+      "price_eur": null,
+      "presentation": null,
+      "taste": null,
+      "recommendation": null
+    }
+  ],
+  "service": {
+    "friendliness": null,
+    "attentiveness": null,
+    "knowledge": null,
+    "upselling_recommendations": null,
+    "communication": null
+  },
+  "environment": {
+    "cleanliness": null,
+    "atmosphere": null,
+    "noise": null,
+    "comfort": null
+  },
+  "commercial": {
+    "value": null,
+    "payment": null,
+    "offers": null,
+    "bundle_design": null
+  },
+  "conclusion": {
+    "what_al_assiel_does_better": null,
+    "what_competitor_does_better": null,
+    "what_should_not_be_copied": null,
+    "one_test_hypothesis": null,
+    "owner": null,
+    "metric": null
+  }
+}

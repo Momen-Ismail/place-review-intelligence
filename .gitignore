@@ -1,15 +1,23 @@
+# Secrets - NEVER commit
 .env
+
+# Local Python environment
 .venv/
+
+# Python temporary/cache files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# macOS
 .DS_Store
+
+# Microsoft Office temporary lock files
 ~$*.xlsx
+~$*.docx
+~$*.pptx
 
-# Generated layer outputs are reproducible local artifacts.
-output/
-
-# Persistent business databases are local source data, never repository files.
-businesses/**/data/*.db
-businesses/**/data/*.db-*
-businesses/**/data/*.sqlite
-businesses/**/data/*.sqlite3
+# Optional temporary files
+*.tmp
+*.log

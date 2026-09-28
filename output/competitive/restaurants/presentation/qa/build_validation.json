@@ -1,0 +1,505 @@
+{
+  "pdf": "/Users/momenismail/Desktop/programming/Review analysis/place-review-intelligence/output/competitive/restaurants/presentation/al_assiel_competitive_intelligence.pdf",
+  "page_count": 67,
+  "internal_links": 67,
+  "external_links": 9,
+  "back_links": 32,
+  "total_annotations": 76,
+  "all_pages_rendered": 67,
+  "blank_pages": [],
+  "montage": "/Users/momenismail/Desktop/programming/Review analysis/place-review-intelligence/output/competitive/restaurants/presentation/qa/all_pages_montage.png",
+  "status": "PASS",
+  "quoted_reviews": 17,
+  "valid_original_review_links": 9,
+  "reviews_without_source_url": 8,
+  "placeholder_review_urls": 0,
+  "review_link_label_validation": true,
+  "layout_pages_checked": 67,
+  "out_of_bounds_elements": 0,
+  "auto_shrunk_body_under_16": 0,
+  "page_31_guardrail_overlaps": 0,
+  "page_32_disclaimer_overlaps": 0,
+  "al_assiel_google_presence_confirmed": true,
+  "page_8_percentage_point_axis_validated": true,
+  "page_8_axis_labels_expected": [
+    "0%",
+    "20%",
+    "40%",
+    "60%",
+    "80%",
+    "100%"
+  ],
+  "existing_management_pdf_unchanged": true,
+  "pptx": "/Users/momenismail/Desktop/programming/Review analysis/place-review-intelligence/output/competitive/restaurants/presentation/al_assiel_competitive_intelligence.pptx",
+  "slide_list": [
+    {
+      "page": 1,
+      "title": "",
+      "chapter": "",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 2,
+      "title": "What is compared\u2014and what is not?",
+      "chapter": "Chapter 1 \u2014 Executive Competitive Overview",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 3,
+      "title": "The recent market signal is uneven\u2014not a single ranking",
+      "chapter": "Chapter 1 \u2014 Executive Competitive Overview",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 4,
+      "title": "Where does the observed evidence point to a leader?",
+      "chapter": "Chapter 1 \u2014 Executive Competitive Overview",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 5,
+      "title": "Recent 90-day benchmark",
+      "chapter": "Chapter 2 \u2014 Recent 90-Day Benchmark",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 6,
+      "title": "Observed rating: Al Assiel trails the recent field",
+      "chapter": "Chapter 2 \u2014 Recent 90-Day Benchmark",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 7,
+      "title": "Al Safa has the strongest recent review cadence",
+      "chapter": "Chapter 2 \u2014 Recent 90-Day Benchmark",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 8,
+      "title": "The risk is concentrated in Al Assiel\u2019s low-score share",
+      "chapter": "Chapter 2 \u2014 Recent 90-Day Benchmark",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 9,
+      "title": "Recent ratings diverge from prior baselines",
+      "chapter": "Chapter 2 \u2014 Recent 90-Day Benchmark",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 10,
+      "title": "Latest 30 days: Al Assiel improves slightly, but remains exposed",
+      "chapter": "Chapter 3 \u2014 Latest 30-Day Movement",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 11,
+      "title": "Latest 30-day topics: the written sample is thin",
+      "chapter": "Chapter 3 \u2014 Latest 30-Day Movement",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 12,
+      "title": "Monthly rating trend",
+      "chapter": "Chapter 4 \u2014 Rating & Review-Volume Trends",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 13,
+      "title": "Monthly review volume shows very different market visibility",
+      "chapter": "Chapter 4 \u2014 Rating & Review-Volume Trends",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 14,
+      "title": "Monthly low-score share isolates recent risk",
+      "chapter": "Chapter 4 \u2014 Rating & Review-Volume Trends",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 15,
+      "title": "Owner-response activity disappears in the recent window",
+      "chapter": "Chapter 5 \u2014 Owner Response & Reputation Management",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 16,
+      "title": "Is Al Assiel uniquely weak at response management?",
+      "chapter": "Chapter 5 \u2014 Owner Response & Reputation Management",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 17,
+      "title": "What causes bad reviews?",
+      "chapter": "Chapter 6 \u2014 Bad Reviews / Low-Score Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 18,
+      "title": "Al Assiel: bad-review pattern",
+      "chapter": "Chapter 6 \u2014 Bad Reviews / Low-Score Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 19,
+      "title": "Olivenzweig: bad-review pattern",
+      "chapter": "Chapter 6 \u2014 Bad Reviews / Low-Score Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 20,
+      "title": "Al Safa: bad-review pattern",
+      "chapter": "Chapter 6 \u2014 Bad Reviews / Low-Score Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 21,
+      "title": "Beit Fayrouz has no written 1\u20132-star evidence",
+      "chapter": "Chapter 6 \u2014 Bad Reviews / Low-Score Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 22,
+      "title": "Common market problems vs restaurant-specific concentrations",
+      "chapter": "Chapter 6 \u2014 Bad Reviews / Low-Score Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 23,
+      "title": "Service sentiment: Al Safa has the strongest observed positive share",
+      "chapter": "Chapter 7 \u2014 Service Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 24,
+      "title": "Food & Taste: Al Assiel carries the largest negative counts",
+      "chapter": "Chapter 8 \u2014 Food & Taste Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 25,
+      "title": "Food and Service sentiment over complete months",
+      "chapter": "Chapter 8 \u2014 Food & Taste Comparison",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 26,
+      "title": "Taste and Value trends require count discipline",
+      "chapter": "Chapter 9 \u2014 Price & Value",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 27,
+      "title": "Value sentiment and menu price are different signals",
+      "chapter": "Chapter 9 \u2014 Price & Value",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 28,
+      "title": "Kitchen vs bar: Olivenzweig has the broadest observed drink program",
+      "chapter": "Chapter 11 \u2014 Kitchen vs Bar / Drinks",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 29,
+      "title": "Concept comparison: buffet is not the same as brunch",
+      "chapter": "Chapter 12 \u2014 Buffet / Brunch / Special Concepts",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 30,
+      "title": "Menu structures differ materially",
+      "chapter": "Chapter 13 \u2014 Menu Structure",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 31,
+      "title": "Dish signals are customer attention\u2014not sales",
+      "chapter": "Chapter 15 \u2014 Dish / Favourite Signals",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 32,
+      "title": "A data-led tasting shortlist",
+      "chapter": "Chapter 16 \u2014 Competitor Tasting Shortlist",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 33,
+      "title": "Digital and service footprints shape discoverability",
+      "chapter": "Chapter 17 \u2014 Digital / Service Footprint",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 34,
+      "title": "Turn competitor visits into controlled field research",
+      "chapter": "Chapter 19 \u2014 Competitor Visit Program",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 35,
+      "title": "What should Al Assiel do next?",
+      "chapter": "Chapter 18 \u2014 What Al Assiel Should Investigate",
+      "kind": "main",
+      "appendix": null
+    },
+    {
+      "page": 36,
+      "title": "Period definitions",
+      "chapter": "Appendix A \u2014 Period Definitions",
+      "kind": "appendix",
+      "appendix": "A \u2014 Period Definitions"
+    },
+    {
+      "page": 37,
+      "title": "Data quality and source coverage",
+      "chapter": "Appendix B \u2014 Data Quality",
+      "kind": "appendix",
+      "appendix": "B \u2014 Data Quality"
+    },
+    {
+      "page": 38,
+      "title": "Recent 90-day detailed benchmark",
+      "chapter": "Appendix C \u2014 Recent 90d Benchmark",
+      "kind": "appendix",
+      "appendix": "C \u2014 Recent 90d Benchmark"
+    },
+    {
+      "page": 39,
+      "title": "Latest 30-day detailed benchmark",
+      "chapter": "Appendix D \u2014 Latest 30d Benchmark",
+      "kind": "appendix",
+      "appendix": "D \u2014 Latest 30d Benchmark"
+    },
+    {
+      "page": 40,
+      "title": "Monthly rating evidence",
+      "chapter": "Appendix E1 \u2014 Rating Trends",
+      "kind": "appendix",
+      "appendix": "E1 \u2014 Rating Trends"
+    },
+    {
+      "page": 41,
+      "title": "Monthly review-volume evidence",
+      "chapter": "Appendix E2 \u2014 Rating Trends",
+      "kind": "appendix",
+      "appendix": "E2 \u2014 Rating Trends"
+    },
+    {
+      "page": 42,
+      "title": "Monthly low-score evidence",
+      "chapter": "Appendix E3 \u2014 Rating Trends",
+      "kind": "appendix",
+      "appendix": "E3 \u2014 Rating Trends"
+    },
+    {
+      "page": 43,
+      "title": "Recent low-score review evidence \u00b7 1",
+      "chapter": "Appendix F1 \u2014 Low-Score Evidence",
+      "kind": "appendix",
+      "appendix": "F1 \u2014 Low-Score Evidence"
+    },
+    {
+      "page": 44,
+      "title": "Recent low-score review evidence \u00b7 2",
+      "chapter": "Appendix F2 \u2014 Low-Score Evidence",
+      "kind": "appendix",
+      "appendix": "F2 \u2014 Low-Score Evidence"
+    },
+    {
+      "page": 45,
+      "title": "Recent low-score review evidence \u00b7 3",
+      "chapter": "Appendix F3 \u2014 Low-Score Evidence",
+      "kind": "appendix",
+      "appendix": "F3 \u2014 Low-Score Evidence"
+    },
+    {
+      "page": 46,
+      "title": "Recent low-score review evidence \u00b7 4",
+      "chapter": "Appendix F4 \u2014 Low-Score Evidence",
+      "kind": "appendix",
+      "appendix": "F4 \u2014 Low-Score Evidence"
+    },
+    {
+      "page": 47,
+      "title": "Recent low-score review evidence \u00b7 5",
+      "chapter": "Appendix F5 \u2014 Low-Score Evidence",
+      "kind": "appendix",
+      "appendix": "F5 \u2014 Low-Score Evidence"
+    },
+    {
+      "page": 48,
+      "title": "Recent low-score review evidence \u00b7 6",
+      "chapter": "Appendix F6 \u2014 Low-Score Evidence",
+      "kind": "appendix",
+      "appendix": "F6 \u2014 Low-Score Evidence"
+    },
+    {
+      "page": 49,
+      "title": "Service topic evidence",
+      "chapter": "Appendix G \u2014 Service Evidence",
+      "kind": "appendix",
+      "appendix": "G \u2014 Service Evidence"
+    },
+    {
+      "page": 50,
+      "title": "Food & Taste topic evidence",
+      "chapter": "Appendix H \u2014 Food / Taste Evidence",
+      "kind": "appendix",
+      "appendix": "H \u2014 Food / Taste Evidence"
+    },
+    {
+      "page": 51,
+      "title": "Price & Value evidence",
+      "chapter": "Appendix I \u2014 Price / Value Evidence",
+      "kind": "appendix",
+      "appendix": "I \u2014 Price / Value Evidence"
+    },
+    {
+      "page": 52,
+      "title": "Drinks / bar evidence",
+      "chapter": "Appendix J \u2014 Drinks Evidence",
+      "kind": "appendix",
+      "appendix": "J \u2014 Drinks Evidence"
+    },
+    {
+      "page": 53,
+      "title": "Menu normalization decisions",
+      "chapter": "Appendix K \u2014 Menu Normalization",
+      "kind": "appendix",
+      "appendix": "K \u2014 Menu Normalization"
+    },
+    {
+      "page": 54,
+      "title": "Dish / favourite signal details",
+      "chapter": "Appendix L \u2014 Dish Signals",
+      "kind": "appendix",
+      "appendix": "L \u2014 Dish Signals"
+    },
+    {
+      "page": 55,
+      "title": "Competitor tasting shortlist",
+      "chapter": "Appendix M \u2014 Tasting Shortlist",
+      "kind": "appendix",
+      "appendix": "M \u2014 Tasting Shortlist"
+    },
+    {
+      "page": 56,
+      "title": "Comparable price basket \u00b7 1",
+      "chapter": "Appendix N1 \u2014 Comparable Price Basket",
+      "kind": "appendix",
+      "appendix": "N1 \u2014 Comparable Price Basket"
+    },
+    {
+      "page": 57,
+      "title": "Comparable price basket \u00b7 2",
+      "chapter": "Appendix N2 \u2014 Comparable Price Basket",
+      "kind": "appendix",
+      "appendix": "N2 \u2014 Comparable Price Basket"
+    },
+    {
+      "page": 58,
+      "title": "Comparable price basket \u00b7 3",
+      "chapter": "Appendix N3 \u2014 Comparable Price Basket",
+      "kind": "appendix",
+      "appendix": "N3 \u2014 Comparable Price Basket"
+    },
+    {
+      "page": 59,
+      "title": "Comparable price basket \u00b7 4",
+      "chapter": "Appendix N4 \u2014 Comparable Price Basket",
+      "kind": "appendix",
+      "appendix": "N4 \u2014 Comparable Price Basket"
+    },
+    {
+      "page": 60,
+      "title": "Digital / service footprint details",
+      "chapter": "Appendix O \u2014 Digital / Service Footprint",
+      "kind": "appendix",
+      "appendix": "O \u2014 Digital / Service Footprint"
+    },
+    {
+      "page": 61,
+      "title": "Al Assiel sources and conflicts",
+      "chapter": "Appendix P1 \u2014 Source Register / Conflicts",
+      "kind": "appendix",
+      "appendix": "P1 \u2014 Source Register / Conflicts"
+    },
+    {
+      "page": 62,
+      "title": "Olivenzweig sources and conflicts",
+      "chapter": "Appendix P2 \u2014 Source Register / Conflicts",
+      "kind": "appendix",
+      "appendix": "P2 \u2014 Source Register / Conflicts"
+    },
+    {
+      "page": 63,
+      "title": "Al Safa sources and conflicts",
+      "chapter": "Appendix P3 \u2014 Source Register / Conflicts",
+      "kind": "appendix",
+      "appendix": "P3 \u2014 Source Register / Conflicts"
+    },
+    {
+      "page": 64,
+      "title": "Beit Fayrouz sources and conflicts",
+      "chapter": "Appendix P4 \u2014 Source Register / Conflicts",
+      "kind": "appendix",
+      "appendix": "P4 \u2014 Source Register / Conflicts"
+    },
+    {
+      "page": 65,
+      "title": "Competitor visit scorecard \u00b7 visit facts",
+      "chapter": "Appendix Q1 \u2014 Competitor Visit Scorecard",
+      "kind": "appendix",
+      "appendix": "Q1 \u2014 Competitor Visit Scorecard"
+    },
+    {
+      "page": 66,
+      "title": "Competitor visit scorecard \u00b7 interpretation",
+      "chapter": "Appendix Q2 \u2014 Competitor Visit Scorecard",
+      "kind": "appendix",
+      "appendix": "Q2 \u2014 Competitor Visit Scorecard"
+    },
+    {
+      "page": 67,
+      "title": "Methodology and evidence thresholds",
+      "chapter": "Appendix R \u2014 Methodology / Thresholds",
+      "kind": "appendix",
+      "appendix": "R \u2014 Methodology / Thresholds"
+    }
+  ]
+}
