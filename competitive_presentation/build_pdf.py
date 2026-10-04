@@ -36,7 +36,15 @@ def _valid_public_url(value: object) -> bool:
     return parsed.scheme in {"http", "https"} and bool(parsed.netloc)
 
 
-def _validate_review_audit(slides_dir: Path, links: list[dict], audit_path: Path) -> tuple[list[dict], dict]:
+def _validate_review_audit(
+    slides_dir: Path,
+    links: list[dict],
+    audit_path: Path,
+    review_labels: tuple[str, str] = (
+        "Open original review →",
+        "Original review link unavailable in source data",
+    ),
+) -> tuple[list[dict], dict]:
     audit = json.loads(audit_path.read_text(encoding="utf-8"))
     if not audit:
         raise RuntimeError("Review-link audit is empty")
@@ -65,7 +73,7 @@ def _validate_review_audit(slides_dir: Path, links: list[dict], audit_path: Path
         layout_path = slides_dir / f"slide-{page:02d}.layout.json"
         layout = json.loads(layout_path.read_text(encoding="utf-8"))
         previews = [str(element.get("textPreview", "")) for element in layout.get("elements", [])]
-        for label in ("Open original review →", "Original review link unavailable in source data"):
+        for label in review_labels:
             expected = sum(1 for row in audit if int(row["page"]) == page and row["label"] == label)
             visible = sum(1 for text in previews if label in text)
             if expected != visible:
@@ -89,11 +97,19 @@ def build(
     review_audit_path: Path,
     output_pdf: Path,
     qa_dir: Path,
+    *,
+    review_labels: tuple[str, str] = (
+        "Open original review →",
+        "Original review link unavailable in source data",
+    ),
+    back_label: str = "← Back to source slide",
 ) -> dict:
     images = _slide_images(slides_dir)
     slides = json.loads(slide_list_path.read_text(encoding="utf-8"))
     links = json.loads(link_manifest_path.read_text(encoding="utf-8"))
-    review_audit, review_validation = _validate_review_audit(slides_dir, links, review_audit_path)
+    review_audit, review_validation = _validate_review_audit(
+        slides_dir, links, review_audit_path, review_labels
+    )
     if len(images) != len(slides):
         raise RuntimeError(f"Rendered images ({len(images)}) != slide list ({len(slides)})")
     if not images:
@@ -200,7 +216,7 @@ def build(
         "page_count": len(images),
         "internal_links": internal_count,
         "external_links": external_count,
-        "back_links": sum(1 for row in links if row.get("label") == "← Back to source slide"),
+        "back_links": sum(1 for row in links if row.get("label") == back_label),
         "total_annotations": annotation_count,
         "all_pages_rendered": len(rendered_paths),
         "blank_pages": blank_pages,
